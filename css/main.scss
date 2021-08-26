@@ -24,10 +24,12 @@ body {
         background: $menu-theme;
         transition: .4s ease-in-out;
         box-shadow: 0px 0px 15px 0px $box-shadow;
+        opacity: 0;
         
         &.toggled {
             right: 0;
             visibility: visible;
+            opacity: 1;
         }
 
         .a-toggle {
@@ -136,7 +138,6 @@ body {
             }
     
             .content {
-                z-index: 6;
                 position: relative;
                 position: absolute;
                 top: 50%;
@@ -149,6 +150,7 @@ body {
                 justify-content: center;
     
                 .title {
+                    z-index: 6;
                     line-height: 60px;
                     margin: 0 30px 0 30px;
                     font-size: 4em;
