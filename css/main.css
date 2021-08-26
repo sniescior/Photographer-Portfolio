@@ -90,6 +90,7 @@ body .wrapper .container {
 }
 
 body .wrapper .container .main-header {
+  z-index: 5;
   position: fixed;
   width: 50vw;
   right: 0;
@@ -158,6 +159,7 @@ body .wrapper .container .banner-image img {
 }
 
 body .wrapper .container .content {
+  z-index: 6;
   position: relative;
   position: absolute;
   top: 50%;
