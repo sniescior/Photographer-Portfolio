@@ -3,10 +3,8 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background: #eee;
+  background: #fff;
   color: #111;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 body .menu {
@@ -66,11 +64,20 @@ body .menu ul li a:hover {
 }
 
 body .wrapper {
-  overflow-y: scroll;
+  overflow: hidden;
   height: 100vh;
+  background: #fff;
 }
 
-body .wrapper .main-header {
+body .wrapper .container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .wrapper .container .main-header {
   z-index: 5;
   position: fixed;
   width: 50vw;
@@ -81,30 +88,10 @@ body .wrapper .main-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: #eee;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  background: #fff;
 }
 
-body .wrapper .main-header.scrolled {
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
-  background: #eee;
-  width: 100%;
-  -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
-          box-shadow: 0px 0px 15px 0px #9D9D9D;
-}
-
-body .wrapper .main-header.scrolled .logo {
-  font-size: 1.5em;
-}
-
-body .wrapper .main-header.toggled {
-  -webkit-transform: translateX(-300px);
-          transform: translateX(-300px);
-}
-
-body .wrapper .main-header .logo {
+body .wrapper .container .main-header .logo {
   margin: 30px;
   font-size: 1.2em;
   position: relative;
@@ -116,18 +103,18 @@ body .wrapper .main-header .logo {
           align-items: center;
 }
 
-body .wrapper .main-header .logo a {
+body .wrapper .container .main-header .logo a {
   text-decoration: none;
   color: #111;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
 
-body .wrapper .main-header .logo a:hover {
+body .wrapper .container .main-header .logo a:hover {
   color: #4B6587;
 }
 
-body .wrapper .main-header .toggle {
+body .wrapper .container .main-header .toggle {
   margin: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,19 +124,6 @@ body .wrapper .main-header .toggle {
           align-items: center;
   font-size: 1.7em;
   cursor: pointer;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
-}
-
-body .wrapper .main-header .toggle.click {
-  -webkit-transform: translateX(-300px);
-          transform: translateX(-300px);
-}
-
-body .wrapper .container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
 }
@@ -164,8 +138,8 @@ body .wrapper .container .banner-image {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: left;
-     object-position: left;
+  -o-object-position: center;
+     object-position: center;
   opacity: .8;
 }
 
@@ -174,8 +148,6 @@ body .wrapper .container .banner-image img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 
 body .wrapper .container .content {
@@ -201,20 +173,20 @@ body .wrapper .container .content {
 
 body .wrapper .container .content .title {
   line-height: 60px;
-  margin: 0 0 0 30px;
+  margin: 0 30px 0 30px;
   font-size: 4em;
   font-weight: 700;
 }
 
 body .wrapper .container .content .sub-title {
-  margin: 10px 0 0 30px;
+  margin: 10px 30px 0 30px;
   text-transform: uppercase;
   font-size: 1.8em;
   font-weight: 600;
 }
 
 body .wrapper .container .content p {
-  margin: 6px 0 0 30px;
+  margin: 6px 30px 0 30px;
   margin-bottom: 0;
   font-size: 1.2em;
 }
@@ -224,10 +196,13 @@ body .wrapper .container .content a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #111;
   margin: 15px 0 0 30px;
   padding: 12px 30px;
-  color: #eee;
+  color: #fff;
   text-decoration: none;
   font-size: 1.2em;
   -webkit-transition: .3s ease-in-out;
@@ -284,112 +259,81 @@ body .wrapper .container .social-media-footer ul li a:hover {
   color: #4B6587;
 }
 
-body .wrapper .gallery {
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+@media (max-width: 1000px) {
+  body .wrapper .container .banner-image {
+    width: 30vw;
+  }
+  body .wrapper .container .content {
+    width: 70vw;
+  }
+  body .wrapper .container .main-header {
+    width: 70vw;
+  }
 }
 
-body .wrapper .gallery.active {
-  -webkit-transform: translateX(-300px);
-          transform: translateX(-300px);
+@media (max-width: 800px) {
+  body .wrapper .container .banner-image {
+    width: 100vw;
+    opacity: .3;
+  }
+  body .wrapper .container .main-header {
+    width: 100vw;
+  }
+  body .wrapper .container .social-media-footer {
+    width: 100vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #fff;
+  }
+  body .wrapper .container .content {
+    width: 100vw;
+  }
+  body .wrapper .container .content .title {
+    margin-left: 40px;
+    word-wrap: break-word;
+  }
+  body .wrapper .container .content .sub-title {
+    margin-left: 40px;
+  }
+  body .wrapper .container .content p {
+    margin-left: 40px;
+  }
+  body .wrapper .container .content a {
+    margin-left: 40px;
+  }
 }
 
-body .wrapper .gallery .gallery-title {
-  margin: 30px 0 0 0;
-  font-size: 1.8em;
-  font-weight: 700;
-  text-align: center;
+@media (max-width: 505px) {
+  body .wrapper .container .content .title {
+    font-size: 3em;
+    line-height: 40px;
+  }
+  body .wrapper .container .content .sub-title {
+    font-size: 1.5em;
+  }
 }
 
-body .wrapper .gallery .gallery-subtitle {
-  display: block;
-  margin: 0 auto 0 auto;
-  font-size: 1.2em;
-  max-width: 500px;
-  text-align: center;
-  font-weight: 500;
+@media (max-width: 385px) {
+  body .wrapper .container .content .title {
+    font-size: 2.6em;
+  }
 }
 
-body .wrapper .gallery .content {
-  margin: 30px 30px 0 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .wrapper .gallery .content .card {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  position: relative;
-  height: 340px;
-  margin: 10px 10px 0 10px;
-  overflow: hidden;
-}
-
-body .wrapper .gallery .content .card:hover img {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-  opacity: .8;
-}
-
-body .wrapper .gallery .content .card img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
-}
-
-body .wrapper .gallery .content .card img:first-child {
-  -o-object-position: bottom;
-     object-position: bottom;
-}
-
-body .wrapper .gallery .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  height: 100px;
-}
-
-body .wrapper .gallery .links .gallery-link {
-  color: #eee;
-  text-decoration: none;
-  font-size: 1.3em;
-  display: block;
-  z-index: 1;
-  margin: auto 10px auto 10px;
-  padding: 12px 30px;
-  width: 160px;
-  background: #111;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  line-height: 20px;
-  text-align: center;
-}
-
-body .wrapper .gallery .links .gallery-link:hover {
-  background: #4B6587;
+@media (max-width: 385px) {
+  body .wrapper .container .content .title {
+    margin-left: 20px;
+    margin-right: 5px;
+  }
+  body .wrapper .container .content .sub-title {
+    margin-left: 20px;
+    margin-right: 5px;
+  }
+  body .wrapper .container .content p {
+    margin-left: 20px;
+  }
+  body .wrapper .container .content a {
+    margin-left: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
