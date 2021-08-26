@@ -141,8 +141,6 @@ body .wrapper .container .banner-image {
   -o-object-position: center;
      object-position: center;
   opacity: .8;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
 }
 
 body .wrapper .container .banner-image img {
@@ -150,8 +148,6 @@ body .wrapper .container .banner-image img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
 }
 
 body .wrapper .container .content {

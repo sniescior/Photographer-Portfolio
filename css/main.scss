@@ -117,12 +117,11 @@ body {
                 object-fit: cover;
                 object-position: center;
                 opacity: .8;
-                transition: .5s ease-in-out;
+                
                 img {
                     z-index: 10;
                     display: block;
                     object-fit: cover;
-                    transition: .5s ease-in-out;
                 }
             }
     
