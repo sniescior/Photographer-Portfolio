@@ -90,7 +90,6 @@ body .wrapper .container {
 }
 
 body .wrapper .container .main-header {
-  z-index: 5;
   position: fixed;
   width: 50vw;
   right: 0;
