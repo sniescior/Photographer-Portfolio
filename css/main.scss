@@ -301,6 +301,14 @@ body {
                 }
             }
 
+            @media (max-width: 650px) {
+                .container {
+                    &.active {
+                        opacity: 0;
+                    }
+                }
+            }
+
             @media (max-width: 505px) {
                 .content {
                     .title {

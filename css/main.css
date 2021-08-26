@@ -336,6 +336,12 @@ body .wrapper .container .social-media-footer ul li a:hover {
   }
 }
 
+@media (max-width: 650px) {
+  body .wrapper .container .container.active {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 505px) {
   body .wrapper .container .content .title {
     font-size: 3em;
