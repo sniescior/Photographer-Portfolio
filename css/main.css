@@ -14,7 +14,7 @@ body .menu {
   width: 300px;
   right: -350px;
   text-align: center;
-  background: #eee;
+  background: #fff;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
@@ -140,7 +140,6 @@ body .wrapper .container .banner-image {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  opacity: .8;
 }
 
 body .wrapper .container .banner-image img {

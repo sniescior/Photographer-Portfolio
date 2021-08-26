@@ -1,5 +1,5 @@
 $background-theme: #fff;
-$menu-theme: #eee;
+$menu-theme: #fff;
 $button-theme: #111;
 $font-color: #111;
 $box-shadow: #9D9D9D;
@@ -116,7 +116,6 @@ body {
                 height: 100vh;
                 object-fit: cover;
                 object-position: center;
-                opacity: .8;
                 img {
                     z-index: 10;
                     display: block;
@@ -273,7 +272,6 @@ body {
                         font-size: 1.5em;
                     }
                 }
-                
             }
 
             @media (max-width: 385px) {
@@ -303,10 +301,8 @@ body {
                     a {
                         margin-left: 20px;
                     }
-                }
-                
+                }   
             }
-
         }
     }
 }
