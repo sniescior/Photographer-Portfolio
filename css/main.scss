@@ -116,6 +116,8 @@ body {
                 height: 100vh;
                 object-fit: cover;
                 object-position: center;
+                opacity: .8;
+                transition: .5s ease-in-out;
                 img {
                     z-index: 10;
                     display: block;

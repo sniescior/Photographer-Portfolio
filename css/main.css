@@ -140,6 +140,7 @@ body .wrapper .container .banner-image {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  opacity: .8;
 }
 
 body .wrapper .container .banner-image img {
