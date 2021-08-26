@@ -136,10 +136,6 @@ body .wrapper .container.active {
 body .wrapper .container .banner-image {
   width: 50vw;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
   opacity: .8;
 }
 
