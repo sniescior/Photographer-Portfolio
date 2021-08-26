@@ -274,7 +274,7 @@ body .wrapper .container .social-media-footer ul li a:hover {
 @media (max-width: 800px) {
   body .wrapper .container .banner-image {
     width: 100vw;
-    opacity: .3;
+    opacity: .5;
   }
   body .wrapper .container .main-header {
     width: 100vw;

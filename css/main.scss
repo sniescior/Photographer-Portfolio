@@ -117,7 +117,7 @@ body {
                 object-fit: cover;
                 object-position: center;
                 opacity: .8;
-                
+
                 img {
                     z-index: 10;
                     display: block;
@@ -228,7 +228,7 @@ body {
             @media (max-width: 800px) {
                 .banner-image {
                     width: 100vw;
-                    opacity: .3;
+                    opacity: .5;
                 }
 
                 .main-header {
