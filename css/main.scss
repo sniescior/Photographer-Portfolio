@@ -1,0 +1,320 @@
+$background-theme: #eee;
+$menu-theme: #eee;
+$button-theme: #111;
+$font-color: #111;
+$box-shadow: #9D9D9D;
+$hover-color: #4B6587;
+
+body {
+    width: 100vw;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: $background-theme;
+    color: $font-color;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    .menu {
+        z-index: 10;
+        height: 100vh;
+        position: fixed;
+        width: 300px;
+        right: -350px;
+        text-align: center;
+        background: $menu-theme;
+        transition: .4s ease-in-out;
+        box-shadow: 0px 0px 15px 0px $box-shadow;
+        
+        &.toggled {
+            right: 0;
+            visibility: visible;
+        }
+        
+        ul {
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            margin: 0;
+            list-style-type: none;
+            
+            li {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-size: 1.4em;
+                    color: $font-color;
+                    transition: .4s ease-in-out;
+                    
+                    &:hover {
+                        transform: translateX(3px);
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .wrapper {
+        overflow-y: scroll;
+        height: 100vh;
+
+        .main-header {
+            z-index: 5;
+            position: fixed;
+            width: 50vw;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            background: $background-theme;
+            transition: .4s ease-in-out;
+
+            &.scrolled {
+                transition: .4s ease-in-out;
+                background: $background-theme;
+                width: 100%;
+                box-shadow: 0px 0px 15px 0px $box-shadow;
+
+                .logo {
+                    font-size: 1.5em;
+                }
+            }
+
+            &.toggled {
+                transform: translateX(-300px);
+            }
+
+            .logo {
+                margin: 30px;
+                font-size: 1.2em;
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    color: $font-color;
+                    transition: .2s ease-in-out;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+
+            .toggle {
+                margin: 30px;
+                display: flex;
+                align-items: center;
+                font-size: 1.7em;
+                cursor: pointer;
+                transition: .4s ease-in-out;
+
+                &.click {
+                    transform: translateX(-300px);
+                }
+            }
+        }
+    
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            transition: .4s ease-in-out;
+    
+            &.active {
+                transform: translateX(-300px);
+            }
+    
+            .banner-image {
+                width: 50vw;
+                height: 100vh;
+                object-fit: cover;
+                object-position: left;
+                opacity: .8;
+                img {
+                    z-index: 10;
+                    display: block;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+    
+            .content {
+                position: relative;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 50vw;
+                height: 80vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+    
+                .title {
+                    line-height: 60px;
+                    margin: 0 0 0 30px;
+                    font-size: 4em;
+                    font-weight: 700;
+                }
+    
+                .sub-title {
+                    margin: 10px 0 0 30px;
+                    text-transform: uppercase;
+                    font-size: 1.8em;
+                    font-weight: 600;
+                }
+    
+                p {
+                    margin: 6px 0 0 30px;
+                    margin-bottom: 0;
+                    font-size: 1.2em;
+                }
+    
+                a {
+                    display: block;
+                    width: fit-content;
+                    background: $button-theme;
+                    margin: 15px 0 0 30px;
+                    padding: 12px 30px;
+                    color: $background-theme;
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    transition: .3s ease-in-out;
+    
+                    &:hover {
+                        background: $hover-color;
+                    }
+                }
+            }
+    
+            .social-media-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transition: .5s ease-in-out;
+
+                ul {
+                    display: flex;
+                    list-style-type: none;
+                    padding: 30px;
+                    margin: 0;
+                    
+                    li {
+                        margin-right: 20px;
+    
+                        &:last-child {
+                            margin-right: 0;
+                        }
+    
+                        a {
+                            font-size: 1.3em;
+                            color: $font-color;
+                            transition: .2s ease-in-out;
+
+                            &:hover {
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .gallery {
+            width: 100vw;
+            height: 100vh;
+            transition: .4s ease-in-out;
+
+            &.active {
+                transform: translateX(-300px);
+            }
+
+            .gallery-title {
+                margin: 30px 0 0 0;
+                font-size: 1.8em;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .gallery-subtitle {
+                display: block;
+                margin: 0 auto 0 auto;
+                font-size: 1.2em;
+                max-width: 500px;
+                text-align: center;
+                font-weight: 500;
+            }
+
+            .content {
+                margin: 30px 30px 0 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                .card {
+                    align-self: center;
+                    position: relative;
+                    height: 340px;
+                    margin: 10px 10px 0 10px;
+                    overflow: hidden;
+    
+                    &:hover img {
+                        transform: scale(1.4);
+                        opacity: .8;
+                    }
+    
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        transition: .2s ease-in-out;
+
+                        &:first-child {
+                            object-position: bottom;
+                        }
+                    }
+                }
+            }
+
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                height: 100px;
+
+                .gallery-link {
+                    color: $background-theme;
+                    text-decoration: none;
+                    font-size: 1.3em;
+                    display: block;
+                    z-index: 1;
+                    margin: auto 10px auto 10px;
+                    padding: 12px 30px;
+                    width: 160px;
+                    background: $button-theme;
+                    transition: .3s ease-in-out;
+                    line-height: 20px;
+                    text-align: center;
+    
+                    &:hover {
+                        background: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,395 @@
+body {
+  width: 100vw;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  color: #111;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body .menu {
+  z-index: 10;
+  height: 100vh;
+  position: fixed;
+  width: 300px;
+  right: -350px;
+  text-align: center;
+  background: #eee;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
+          box-shadow: 0px 0px 15px 0px #9D9D9D;
+}
+
+body .menu.toggled {
+  right: 0;
+  visibility: visible;
+}
+
+body .menu ul {
+  padding: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  list-style-type: none;
+}
+
+body .menu ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body .menu ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.4em;
+  color: #111;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .menu ul li a:hover {
+  -webkit-transform: translateX(3px);
+          transform: translateX(3px);
+  color: #4B6587;
+}
+
+body .wrapper {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+body .wrapper .main-header {
+  z-index: 5;
+  position: fixed;
+  width: 50vw;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #eee;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .wrapper .main-header.scrolled {
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  background: #eee;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
+          box-shadow: 0px 0px 15px 0px #9D9D9D;
+}
+
+body .wrapper .main-header.scrolled .logo {
+  font-size: 1.5em;
+}
+
+body .wrapper .main-header.toggled {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+}
+
+body .wrapper .main-header .logo {
+  margin: 30px;
+  font-size: 1.2em;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .wrapper .main-header .logo a {
+  text-decoration: none;
+  color: #111;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+body .wrapper .main-header .logo a:hover {
+  color: #4B6587;
+}
+
+body .wrapper .main-header .toggle {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.7em;
+  cursor: pointer;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .wrapper .main-header .toggle.click {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+}
+
+body .wrapper .container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .wrapper .container.active {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+}
+
+body .wrapper .container .banner-image {
+  width: 50vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+  opacity: .8;
+}
+
+body .wrapper .container .banner-image img {
+  z-index: 10;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+body .wrapper .container .content {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 50vw;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .wrapper .container .content .title {
+  line-height: 60px;
+  margin: 0 0 0 30px;
+  font-size: 4em;
+  font-weight: 700;
+}
+
+body .wrapper .container .content .sub-title {
+  margin: 10px 0 0 30px;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+body .wrapper .container .content p {
+  margin: 6px 0 0 30px;
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+body .wrapper .container .content a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #111;
+  margin: 15px 0 0 30px;
+  padding: 12px 30px;
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.2em;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .wrapper .container .content a:hover {
+  background: #4B6587;
+}
+
+body .wrapper .container .social-media-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+body .wrapper .container .social-media-footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding: 30px;
+  margin: 0;
+}
+
+body .wrapper .container .social-media-footer ul li {
+  margin-right: 20px;
+}
+
+body .wrapper .container .social-media-footer ul li:last-child {
+  margin-right: 0;
+}
+
+body .wrapper .container .social-media-footer ul li a {
+  font-size: 1.3em;
+  color: #111;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+body .wrapper .container .social-media-footer ul li a:hover {
+  color: #4B6587;
+}
+
+body .wrapper .gallery {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .wrapper .gallery.active {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+}
+
+body .wrapper .gallery .gallery-title {
+  margin: 30px 0 0 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  text-align: center;
+}
+
+body .wrapper .gallery .gallery-subtitle {
+  display: block;
+  margin: 0 auto 0 auto;
+  font-size: 1.2em;
+  max-width: 500px;
+  text-align: center;
+  font-weight: 500;
+}
+
+body .wrapper .gallery .content {
+  margin: 30px 30px 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .wrapper .gallery .content .card {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  height: 340px;
+  margin: 10px 10px 0 10px;
+  overflow: hidden;
+}
+
+body .wrapper .gallery .content .card:hover img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  opacity: .8;
+}
+
+body .wrapper .gallery .content .card img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+body .wrapper .gallery .content .card img:first-child {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+body .wrapper .gallery .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100px;
+}
+
+body .wrapper .gallery .links .gallery-link {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.3em;
+  display: block;
+  z-index: 1;
+  margin: auto 10px auto 10px;
+  padding: 12px 30px;
+  width: 160px;
+  background: #111;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  line-height: 20px;
+  text-align: center;
+}
+
+body .wrapper .gallery .links .gallery-link:hover {
+  background: #4B6587;
+}
+/*# sourceMappingURL=main.css.map */
