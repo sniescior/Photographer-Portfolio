@@ -102,7 +102,6 @@ body .wrapper .container .main-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: #fff;
 }
 
 body .wrapper .container .main-header .logo {
@@ -299,6 +298,7 @@ body .wrapper .container .social-media-footer ul li a:hover {
   }
   body .wrapper .container .main-header {
     width: 100vw;
+    background: #fff;
   }
   body .wrapper .container .social-media-footer {
     width: 100vw;
@@ -338,7 +338,8 @@ body .wrapper .container .social-media-footer ul li a:hover {
 
 @media (max-width: 650px) {
   body .wrapper .container .container.active {
-    opacity: 0;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
 }
 

@@ -91,7 +91,6 @@ body {
                 right: 0;
                 display: flex;
                 justify-content: space-between;
-                background: $background-theme;
     
                 .logo {
                     margin: 30px;
@@ -261,6 +260,7 @@ body {
 
                 .main-header {
                     width: 100vw;
+                    background: $background-theme;
                 }
 
                 .social-media-footer {
@@ -304,7 +304,7 @@ body {
             @media (max-width: 650px) {
                 .container {
                     &.active {
-                        opacity: 0;
+                        transform: translateX(-100vw);
                     }
                 }
             }
