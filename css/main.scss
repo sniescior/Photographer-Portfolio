@@ -4,6 +4,7 @@ $button-theme: #111;
 $font-color: #111;
 $box-shadow: #9D9D9D;
 $hover-color: #4B6587;
+$contrast-font-color: #fff;
 
 body {
     width: 100vw;
@@ -28,7 +29,19 @@ body {
             right: 0;
             visibility: visible;
         }
-        
+
+        .a-toggle {
+            color: $font-color;
+            position: absolute;
+            font-size: 1.7em;
+            display: block;
+            bottom: 30px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            cursor: pointer;
+            visibility: hidden;
+        }
+
         ul {
             padding: 0;
             height: 100%;
@@ -59,7 +72,7 @@ body {
     }
 
     .wrapper {
-        overflow: hidden;
+        // overflow: hidden;
         height: 100vh;
         background: $background-theme;
 
@@ -139,20 +152,21 @@ body {
                     line-height: 60px;
                     margin: 0 30px 0 30px;
                     font-size: 4em;
-                    font-weight: 700;
+                    font-weight: 800;
                 }
     
                 .sub-title {
                     margin: 10px 30px 0 30px;
                     text-transform: uppercase;
                     font-size: 1.8em;
-                    font-weight: 600;
+                    font-weight: 800;
                 }
     
                 p {
                     margin: 6px 30px 0 30px;
                     margin-bottom: 0;
                     font-size: 1.2em;
+                    font-size: 200;
                 }
     
                 a {
@@ -209,24 +223,38 @@ body {
                 }
             }
 
-            @media (max-width: 1000px) {
-                .banner-image {
-                    width: 30vw;
-                }
-
+            @media (max-width: 960px) {
                 .content {
-                    width: 70vw;
-                }
+                    .title {
+                        margin-left: 15px;
+                    }
 
-                .main-header {
-                    width: 70vw;
+                    .sub-title {
+                        margin-left: 15px;
+                    }
+
+                    p {
+                        margin-left: 15px;
+                    }
+
+                    a {
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+            @media (max-width: 960px) {
+                .content {
+                    .title {
+                        font-size: 3.5em;
+                    }
                 }
             }
 
             @media (max-width: 800px) {
                 .banner-image {
                     width: 100vw;
-                    opacity: .5;
+                    opacity: .8;
                 }
 
                 .main-header {
@@ -241,22 +269,32 @@ body {
 
                 .content {
                     width: 100vw;
+                    justify-content: flex-end;
+                    padding-bottom: 100px;
 
                     .title {
                         margin-left: 40px;
-                        word-wrap: break-word;
+                        color: $contrast-font-color;
                     }
 
                     .sub-title {
                         margin-left: 40px;
+                        color: $contrast-font-color;
                     }
 
                     p {
                         margin-left: 40px;
+                        color: $contrast-font-color;
                     }
 
                     a {
                         margin-left: 40px;
+                        background: $background-theme;
+                        color: $font-color;
+
+                        &:hover {
+                            color: $contrast-font-color;
+                        }
                     }
                 }
             }
@@ -278,13 +316,6 @@ body {
                 .content {
                     .title {
                         font-size: 2.6em;
-                    }
-                }
-            }
-
-            @media (max-width: 385px) {
-                .content {
-                    .title {
                         margin-left: 20px;
                         margin-right: 5px;
                     }
@@ -305,4 +336,18 @@ body {
             }
         }
     }
+
+    @media (max-width: 650px) {
+        .menu {
+            width: 100vw;
+            right: -130vw;
+
+            .a-toggle {
+                .icon-cancel {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
 }

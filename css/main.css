@@ -26,6 +26,19 @@ body .menu.toggled {
   visibility: visible;
 }
 
+body .menu .a-toggle {
+  color: #111;
+  position: absolute;
+  font-size: 1.7em;
+  display: block;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  cursor: pointer;
+  visibility: hidden;
+}
+
 body .menu ul {
   padding: 0;
   height: 100%;
@@ -64,7 +77,6 @@ body .menu ul li a:hover {
 }
 
 body .wrapper {
-  overflow: hidden;
   height: 100vh;
   background: #fff;
 }
@@ -171,20 +183,21 @@ body .wrapper .container .content .title {
   line-height: 60px;
   margin: 0 30px 0 30px;
   font-size: 4em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 body .wrapper .container .content .sub-title {
   margin: 10px 30px 0 30px;
   text-transform: uppercase;
   font-size: 1.8em;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 body .wrapper .container .content p {
   margin: 6px 30px 0 30px;
   margin-bottom: 0;
   font-size: 1.2em;
+  font-size: 200;
 }
 
 body .wrapper .container .content a {
@@ -255,22 +268,31 @@ body .wrapper .container .social-media-footer ul li a:hover {
   color: #4B6587;
 }
 
-@media (max-width: 1000px) {
-  body .wrapper .container .banner-image {
-    width: 30vw;
+@media (max-width: 960px) {
+  body .wrapper .container .content .title {
+    margin-left: 15px;
   }
-  body .wrapper .container .content {
-    width: 70vw;
+  body .wrapper .container .content .sub-title {
+    margin-left: 15px;
   }
-  body .wrapper .container .main-header {
-    width: 70vw;
+  body .wrapper .container .content p {
+    margin-left: 15px;
+  }
+  body .wrapper .container .content a {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 960px) {
+  body .wrapper .container .content .title {
+    font-size: 3.5em;
   }
 }
 
 @media (max-width: 800px) {
   body .wrapper .container .banner-image {
     width: 100vw;
-    opacity: .5;
+    opacity: .8;
   }
   body .wrapper .container .main-header {
     width: 100vw;
@@ -284,19 +306,30 @@ body .wrapper .container .social-media-footer ul li a:hover {
   }
   body .wrapper .container .content {
     width: 100vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-bottom: 100px;
   }
   body .wrapper .container .content .title {
     margin-left: 40px;
-    word-wrap: break-word;
+    color: #fff;
   }
   body .wrapper .container .content .sub-title {
     margin-left: 40px;
+    color: #fff;
   }
   body .wrapper .container .content p {
     margin-left: 40px;
+    color: #fff;
   }
   body .wrapper .container .content a {
     margin-left: 40px;
+    background: #fff;
+    color: #111;
+  }
+  body .wrapper .container .content a:hover {
+    color: #fff;
   }
 }
 
@@ -313,11 +346,6 @@ body .wrapper .container .social-media-footer ul li a:hover {
 @media (max-width: 385px) {
   body .wrapper .container .content .title {
     font-size: 2.6em;
-  }
-}
-
-@media (max-width: 385px) {
-  body .wrapper .container .content .title {
     margin-left: 20px;
     margin-right: 5px;
   }
@@ -330,6 +358,16 @@ body .wrapper .container .social-media-footer ul li a:hover {
   }
   body .wrapper .container .content a {
     margin-left: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  body .menu {
+    width: 100vw;
+    right: -130vw;
+  }
+  body .menu .a-toggle .icon-cancel {
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=main.css.map */
