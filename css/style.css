@@ -92,7 +92,6 @@ body .container {
 }
 
 body .container .main-header {
-  background: #fff;
   z-index: 5;
   position: fixed;
   width: 100vw;
@@ -104,6 +103,10 @@ body .container .main-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+body .container .main-header.scrolled {
+  background: #fff;
 }
 
 body .container .main-header .logo {
@@ -152,6 +155,139 @@ body section {
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section .heading {
+  text-align: center;
+}
+
+body section .heading .title {
+  font-size: 2em;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+}
+
+body section .heading .subtitle {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+body section .cards {
+  height: 70vh;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+
+body section .cards .card {
+  margin-top: 80px;
+  width: 350px;
+  height: 500px;
+  -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
+          box-shadow: 0px 0px 15px 0px #9D9D9D;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+body section .cards .card.middle {
+  margin-top: 0;
+  height: 580px;
+}
+
+body section .cards .card.middle .content {
+  height: 380px;
+}
+
+body section .cards .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+body section .cards .card:hover span {
+  opacity: 1;
+}
+
+body section .cards .card:hover .bg-image img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+body section .cards .card .bg-image {
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+  height: 200px;
+}
+
+body section .cards .card .bg-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+body section .cards .card .content {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section .cards .card .content .title {
+  font-size: 1.6em;
+  margin-top: 18px;
+}
+
+body section .cards .card .content .paragraph {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+body section .cards .card .content .price {
+  font-size: 1em;
+  margin-bottom: 18px;
+}
+
+body section .cards .card span {
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: #4B6587;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  opacity: 0;
 }
 
 body section:nth-child(odd) {
