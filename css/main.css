@@ -78,21 +78,17 @@ body .menu ul li a:hover {
   color: #4B6587;
 }
 
-body .wrapper {
+body .container {
   overflow: hidden;
-  height: 100vh;
-  background: #fff;
-}
-
-body .wrapper .container {
   position: relative;
   width: 100vw;
   height: 100vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+  background: #fff;
 }
 
-body .wrapper .container .main-header {
+body .container .main-header {
   z-index: 5;
   position: fixed;
   width: 50vw;
@@ -105,7 +101,7 @@ body .wrapper .container .main-header {
           justify-content: space-between;
 }
 
-body .wrapper .container .main-header .logo {
+body .container .main-header .logo {
   margin: 30px;
   font-size: 1.2em;
   position: relative;
@@ -117,18 +113,18 @@ body .wrapper .container .main-header .logo {
           align-items: center;
 }
 
-body .wrapper .container .main-header .logo a {
+body .container .main-header .logo a {
   text-decoration: none;
   color: #111;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
 
-body .wrapper .container .main-header .logo a:hover {
+body .container .main-header .logo a:hover {
   color: #4B6587;
 }
 
-body .wrapper .container .main-header .toggle {
+body .container .main-header .toggle {
   margin: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -142,25 +138,25 @@ body .wrapper .container .main-header .toggle {
   transition: .4s ease-in-out;
 }
 
-body .wrapper .container.active {
+body .container.active {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
 
-body .wrapper .container .banner-image {
+body .container .banner-image {
   width: 50vw;
   height: 100vh;
   opacity: 1;
 }
 
-body .wrapper .container .banner-image img {
+body .container .banner-image img {
   z-index: 10;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-body .wrapper .container .content {
+body .container .content {
   position: relative;
   position: absolute;
   top: 50%;
@@ -181,7 +177,7 @@ body .wrapper .container .content {
           justify-content: center;
 }
 
-body .wrapper .container .content .title {
+body .container .content .title {
   z-index: 6;
   line-height: 60px;
   margin: 0 30px 0 30px;
@@ -189,21 +185,21 @@ body .wrapper .container .content .title {
   font-weight: 800;
 }
 
-body .wrapper .container .content .sub-title {
+body .container .content .sub-title {
   margin: 10px 30px 0 30px;
   text-transform: uppercase;
   font-size: 1.8em;
   font-weight: 800;
 }
 
-body .wrapper .container .content p {
+body .container .content p {
   margin: 6px 30px 0 30px;
   margin-bottom: 0;
   font-size: 1.2em;
   font-size: 200;
 }
 
-body .wrapper .container .content a {
+body .container .content a {
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -221,11 +217,11 @@ body .wrapper .container .content a {
   transition: .3s ease-in-out;
 }
 
-body .wrapper .container .content a:hover {
+body .container .content a:hover {
   background: #4B6587;
 }
 
-body .wrapper .container .social-media-footer {
+body .container .social-media-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,7 +239,7 @@ body .wrapper .container .social-media-footer {
   transition: .5s ease-in-out;
 }
 
-body .wrapper .container .social-media-footer ul {
+body .container .social-media-footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,122 +248,122 @@ body .wrapper .container .social-media-footer ul {
   margin: 0;
 }
 
-body .wrapper .container .social-media-footer ul li {
+body .container .social-media-footer ul li {
   margin-right: 20px;
 }
 
-body .wrapper .container .social-media-footer ul li:last-child {
+body .container .social-media-footer ul li:last-child {
   margin-right: 0;
 }
 
-body .wrapper .container .social-media-footer ul li a {
+body .container .social-media-footer ul li a {
   font-size: 1.3em;
   color: #111;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
 
-body .wrapper .container .social-media-footer ul li a:hover {
+body .container .social-media-footer ul li a:hover {
   color: #4B6587;
 }
 
 @media (max-width: 960px) {
-  body .wrapper .container .content .title {
+  body .container .content .title {
     margin-left: 15px;
   }
-  body .wrapper .container .content .sub-title {
+  body .container .content .sub-title {
     margin-left: 15px;
   }
-  body .wrapper .container .content p {
+  body .container .content p {
     margin-left: 15px;
   }
-  body .wrapper .container .content a {
+  body .container .content a {
     margin-left: 15px;
   }
 }
 
 @media (max-width: 960px) {
-  body .wrapper .container .content .title {
+  body .container .content .title {
     font-size: 3.5em;
   }
 }
 
 @media (max-width: 800px) {
-  body .wrapper .container .banner-image {
+  body .container .banner-image {
     width: 100vw;
     opacity: .8;
   }
-  body .wrapper .container .main-header {
+  body .container .main-header {
     width: 100vw;
     background: #fff;
   }
-  body .wrapper .container .social-media-footer {
+  body .container .social-media-footer {
     width: 100vw;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     background: #fff;
   }
-  body .wrapper .container .content {
+  body .container .content {
     width: 100vw;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     padding-bottom: 100px;
   }
-  body .wrapper .container .content .title {
+  body .container .content .title {
     margin-left: 40px;
     color: #fff;
   }
-  body .wrapper .container .content .sub-title {
+  body .container .content .sub-title {
     margin-left: 40px;
     color: #fff;
   }
-  body .wrapper .container .content p {
+  body .container .content p {
     margin-left: 40px;
     color: #fff;
   }
-  body .wrapper .container .content a {
+  body .container .content a {
     margin-left: 40px;
     background: #fff;
     color: #111;
   }
-  body .wrapper .container .content a:hover {
+  body .container .content a:hover {
     color: #fff;
   }
 }
 
 @media (max-width: 650px) {
-  body .wrapper .container .container.active {
+  body .container .container.active {
     -webkit-transform: translateX(-100vw);
             transform: translateX(-100vw);
   }
 }
 
 @media (max-width: 505px) {
-  body .wrapper .container .content .title {
+  body .container .content .title {
     font-size: 3em;
     line-height: 40px;
   }
-  body .wrapper .container .content .sub-title {
+  body .container .content .sub-title {
     font-size: 1.5em;
   }
 }
 
 @media (max-width: 385px) {
-  body .wrapper .container .content .title {
+  body .container .content .title {
     font-size: 2.6em;
     margin-left: 20px;
     margin-right: 5px;
   }
-  body .wrapper .container .content .sub-title {
+  body .container .content .sub-title {
     margin-left: 20px;
     margin-right: 5px;
   }
-  body .wrapper .container .content p {
+  body .container .content p {
     margin-left: 20px;
   }
-  body .wrapper .container .content a {
+  body .container .content a {
     margin-left: 20px;
   }
 }
