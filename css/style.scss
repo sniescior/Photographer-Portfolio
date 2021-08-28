@@ -137,7 +137,7 @@ body {
         overflow-y: scroll;
         position: relative;
         width: 100vw;
-        height: 200vh;
+        height: fit-content;
         transition: .4s ease-in-out;
         background: $background-theme;
             

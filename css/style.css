@@ -159,7 +159,9 @@ body .container {
   overflow-y: scroll;
   position: relative;
   width: 100vw;
-  height: 200vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   background: #fff;
