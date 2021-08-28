@@ -14,6 +14,7 @@ body {
     padding: 0;
     background: $background-theme;
     color: $font-color;
+    overflow: hidden;
     
     .menu {
         z-index: 10;
@@ -92,7 +93,7 @@ body {
         right: 0;
         display: flex;
         justify-content: space-between;
-        transition: .4s ease-in-out;
+        transition: .2s ease-in-out;
 
         &.active {
             transform: translateX(-300px);
@@ -134,10 +135,10 @@ body {
     .container {
         scroll-snap-type: y mandatory;
         overflow-x: hidden;
-        overflow-y: visible;
+        overflow-y: scroll;
         position: relative;
         width: 100vw;
-        // height: 100vh;
+        height: 200vh;
         transition: .4s ease-in-out;
         background: $background-theme;
             

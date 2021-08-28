@@ -139,7 +139,7 @@
             </div>
         </section>
         <section>
-
+            
         </section>
         <footer>
 
@@ -151,13 +151,15 @@
     <script>
         var container = document.querySelector('.container');
         let menu = document.querySelector('.main-header');
-        $(window).on('scroll', () => {
-            if($(window).scrollTop() > 40) {
+
+        container.addEventListener('scroll', () => {
+            if(container.scrollTop > 15) {
                 menu.classList.add('scrolled');
             } else {
                 menu.classList.remove('scrolled');
             }
-        });
+        })
+
     </script>
 </body>
 </html>

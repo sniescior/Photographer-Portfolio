@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: #fff;
   color: #111;
+  overflow: hidden;
 }
 
 body .menu {
@@ -101,8 +102,8 @@ body .main-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 body .main-header.active {
@@ -156,9 +157,10 @@ body .container {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: scroll;
   position: relative;
   width: 100vw;
+  height: 200vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   background: #fff;
