@@ -759,10 +759,4 @@ body .container section:nth-child(even) {
     visibility: visible;
   }
 }
-
-@media (max-width: 1150px) {
-  body {
-    overflow-y: scroll;
-  }
-}
 /*# sourceMappingURL=style.css.map */
