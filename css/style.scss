@@ -14,6 +14,7 @@ body {
     padding: 0;
     background: $background-theme;
     color: $font-color;
+    overflow-y: hidden;
     
     .menu {
         z-index: 10;
@@ -137,7 +138,7 @@ body {
         overflow-y: scroll;
         position: relative;
         width: 100vw;
-        // height: fit-content;
+        height: 100vh;
         transition: .4s ease-in-out;
         background: $background-theme;
             
@@ -501,6 +502,7 @@ body {
         @media (max-width: 1150px) {
 
             .container {
+                height: auto;
                 scroll-snap-type: none;
             }
 

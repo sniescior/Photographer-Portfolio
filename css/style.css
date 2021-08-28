@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: #fff;
   color: #111;
+  overflow-y: hidden;
 }
 
 body .menu {
@@ -159,6 +160,7 @@ body .container {
   overflow-y: scroll;
   position: relative;
   width: 100vw;
+  height: 100vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   background: #fff;
@@ -631,6 +633,7 @@ body .container section:nth-child(even) {
 
 @media (max-width: 1150px) {
   body .container .container {
+    height: auto;
     -ms-scroll-snap-type: none;
         scroll-snap-type: none;
   }
