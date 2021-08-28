@@ -86,7 +86,7 @@ body {
 
     .main-header {
         z-index: 1;
-        position: absolute;
+        position: fixed;
         width: 100vw;
         max-height: 80px;
         right: 0;
@@ -137,7 +137,7 @@ body {
         overflow-y: visible;
         position: relative;
         width: 100vw;
-        height: 100vh;
+        // height: 100vh;
         transition: .4s ease-in-out;
         background: $background-theme;
             
@@ -277,18 +277,24 @@ body {
             }
 
             .section-wrapper {
+                position: relative;
                 width: 100vw;
-                height: fit-content;
+                min-height: 70vh;
                 display: flex;
+                align-items: center;
 
                 .content {
                     z-index: 1;
                     background: $background-theme;
                     width: 36vw;
+                    min-height: 60vh;
                     margin: 0 4vh;
                     padding: 20px;
                     box-shadow: 0 0 15px 0 $box-shadow;
                     color: $font-color;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;                    
 
                     .title {
                         font-weight: 700;
@@ -341,6 +347,7 @@ body {
                 }
                 .section-banner {
                     width: 60vw;
+                    min-height: 70vh;
                     display: grid;
                     grid-template-columns: repeat(5, 1fr);
                     grid-template-rows: repeat(6, 1fr);
@@ -469,6 +476,8 @@ body {
                     align-items: center;
 
                     .content {
+                        min-height: 1px;
+                        height: fit-content;
                         width: 80vw;
                     }
     
@@ -518,7 +527,6 @@ body {
 
                     .card {
                         width: 80vw;
-                        height: 50vh;
                         display: flex;
                         flex-direction: row;
                         margin-top: 0;

@@ -91,7 +91,7 @@ body .menu ul li a.current:hover {
 
 body .main-header {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   max-height: 80px;
   right: 0;
@@ -159,7 +159,6 @@ body .container {
   overflow-y: visible;
   position: relative;
   width: 100vw;
-  height: 100vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   background: #fff;
@@ -345,24 +344,37 @@ body .container section .cards .card span {
 }
 
 body .container section .section-wrapper {
+  position: relative;
   width: 100vw;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  min-height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container section .section-wrapper .content {
   z-index: 1;
   background: #fff;
   width: 36vw;
+  min-height: 60vh;
   margin: 0 4vh;
   padding: 20px;
   -webkit-box-shadow: 0 0 15px 0 #9D9D9D;
           box-shadow: 0 0 15px 0 #9D9D9D;
   color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body .container section .section-wrapper .content .title {
@@ -417,6 +429,7 @@ body .container section .section-wrapper .content .activity a:hover i {
 
 body .container section .section-wrapper .section-banner {
   width: 60vw;
+  min-height: 70vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -597,6 +610,10 @@ body .container section .section-wrapper .section-banner .box:nth-child(11) {
             align-items: center;
   }
   body .container section .section-wrapper .content {
+    min-height: 1px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     width: 80vw;
   }
   body .container section .section-wrapper .section-banner {
@@ -642,7 +659,6 @@ body .container section:nth-child(even) {
   }
   body .container section .cards .card {
     width: 80vw;
-    height: 50vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -99,23 +99,25 @@
             </div>
             <div class="section-wrapper">
                 <div class="content">
-                    <div class="title">
-                        INCLUDED WITH EVERY BOOKING
+                    <div class="content-wrapper">
+                        <div class="title">
+                            INCLUDED WITH EVERY BOOKING
+                        </div>
+                        <p>You can expect the photos from Your event to be edited within 72 hours. I also provide You with a free online gallery ready for You to download the images and share with Your guests.</p>
+                        <span class="plain-line"></span>
+    
+                        <div class="title">
+                            I WORK WITH A GREAT VIDEOGRAPHER
+                        </div>
+                        <p>I team up with talented videographer and editor to create engaging video content for your party.</p>
+                        <span class="plain-line"></span>
+    
+                        <div class="title">
+                            OPTIONAL EXPRESS SERVICE
+                        </div>
+                        <p>Make sure to ask for the next day delivery of Your professionally edited photos</p>
+                        <span class="plain-line"></span>
                     </div>
-                    <p>You can expect the photos from Your event to be edited within 72 hours. I also provide You with a free online gallery ready for You to download the images and share with Your guests.</p>
-                    <span class="plain-line"></span>
-
-                    <div class="title">
-                        I WORK WITH A GREAT VIDEOGRAPHER
-                    </div>
-                    <p>I team up with talented videographer and editor to create engaging video content for your party.</p>
-                    <span class="plain-line"></span>
-
-                    <div class="title">
-                        OPTIONAL EXPRESS SERVICE
-                    </div>
-                    <p>Make sure to ask for the next day delivery of Your professionally edited photos</p>
-                    <span class="plain-line"></span>
                     
                     <div class="activity">
                        <a href="#">CHECK AVAILABILITY<i class="icon-right-small"></i></a>
@@ -143,12 +145,14 @@
 
         </footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="../main.js"></script>
     <script>
         var container = document.querySelector('.container');
         let menu = document.querySelector('.main-header');
-        container.addEventListener('scroll', () => {
-            if(container.scrollTop > 15) {
+        $(window).on('scroll', () => {
+            if($(window).scrollTop() > 40) {
                 menu.classList.add('scrolled');
             } else {
                 menu.classList.remove('scrolled');
