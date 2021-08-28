@@ -68,6 +68,16 @@ body {
                         transform: translateX(3px);
                         color: $hover-color;
                     }
+
+                    &.current {
+                        font-weight: 800;
+
+                        &:hover {
+                            transform: none;
+                            color: $font-color;
+                            cursor: default;
+                        }
+                    }
                 }
             }
         }

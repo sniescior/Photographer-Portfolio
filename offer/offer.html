@@ -14,17 +14,17 @@
     <nav class="menu" id="main-menu">
         <div class="a-toggle" onclick="toggleMenu();"><i class="icon-cancel"></i></div>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="#">Some info</a></li>
-            <li><a href="#">Offer</a></li>
+            <li><a href="javascript:;" class="current">Offer</a></li>
             <li><a href="#">Contact me!</a></li>
         </ul>
     </nav>
+    <header class="main-header">
+        <h2 class="logo"><a href="../index.html">Fancy photographer</a></h2>
+        <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
+    </header>
     <div class="container">
-        <header class="main-header scrolled">
-            <h2 class="logo"><a href="#">Fancy photographer</a></h2>
-            <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
-        </header>
         <section>
             <div class="heading">
                 <h2 class="title">
@@ -99,5 +99,16 @@
         </footer>
     </div>
     <script src="../main.js"></script>
+    <script>
+        var container = document.querySelector('.container');
+        let menu = document.querySelector('.main-header');
+        container.addEventListener('scroll', () => {
+            if(container.scrollTop > 100) {
+                menu.classList.add('scrolled');
+            } else {
+                menu.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

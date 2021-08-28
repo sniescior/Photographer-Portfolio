@@ -3,10 +3,12 @@ function toggleMenu() {
     var menuToggle = document.querySelector('.menu');
     var container = document.querySelector('.container');
     var button  = document.querySelector('.button');
+    var nav = document.querySelector('.main-header')
 
     // toggle menu and move the whole container
     menuToggle.classList.toggle('toggled');
     container.classList.toggle('active');
+    nav.classList.toggle('active');
 
     // change button icon
     if(button.classList.contains('icon-menu')) {

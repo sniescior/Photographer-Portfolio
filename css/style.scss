@@ -69,8 +69,65 @@ body {
                         transform: translateX(3px);
                         color: $hover-color;
                     }
+
+                    &.current {
+                        font-weight: 800;
+
+                        &:hover {
+                            transform: none;
+                            color: $font-color;
+                            cursor: default;
+                        }
+                    }
                 }
             }
+        }
+    }
+
+    .main-header {
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+        max-height: 80px;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transition: .4s ease-in-out;
+
+        &.active {
+            transform: translateX(-300px);
+        }
+
+        &.scrolled {
+            background: $background-theme;
+            z-index: 2;
+        }
+
+        .logo {
+            margin: 30px;
+            font-size: 1.2em;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: $font-color;
+                transition: .2s ease-in-out;
+
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
+
+        .toggle {
+            margin: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 1.7em;
+            cursor: pointer;
+            transition: .4s ease-in-out;
         }
     }
 
@@ -84,166 +141,248 @@ body {
         background: $background-theme;
         scroll-snap-type: y mandatory;
             
-        .main-header {
-            z-index: 5;
-            position: fixed;
-            width: 100vw;
-            max-height: 80px;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-
-            &.scrolled {
-                background: $background-theme;
-            }
-
-            .logo {
-                margin: 30px;
-                font-size: 1.2em;
-                position: relative;
-                display: flex;
-                align-items: center;
-
-                a {
-                    text-decoration: none;
-                    color: $font-color;
-                    transition: .2s ease-in-out;
-
-                    &:hover {
-                        color: $hover-color;
-                    }
-                }
-            }
-
-            .toggle {
-                margin: 30px;
-                display: flex;
-                align-items: center;
-                font-size: 1.7em;
-                cursor: pointer;
-                transition: .4s ease-in-out;
-            }
-        }
 
         &.active {
             transform: translateX(-300px);
         }
-    }
 
-    section {
-        height: 100vh;
-        width: 100vw;
-        scroll-snap-align: start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .heading {
-            text-align: center;
-
-            .title {
-                font-size: 2em;
-                font-weight: 800;
-                margin: 0 0 12px 0;
+        section {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            .heading {
+                z-index: 1;
+                text-align: center;
+    
+                .title {
+                    font-size: 2em;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                }
+    
+                .subtitle {
+                    font-size: 1.3em;
+                    font-weight: 500;
+                    margin-top: 0;
+                }
             }
-
-            .subtitle {
-                font-size: 1.3em;
-                font-weight: 500;
-                margin-top: 0;
+    
+            .cards {
+                height: 70vh;
+                width: 80vw;
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+    
+                .card {
+                    margin-top: 80px;
+                    width: 350px;
+                    height: 60vh;
+                    box-shadow: 0px 0px 15px 0px $box-shadow;
+                    transition: .5s ease-in-out;
+    
+                    &.middle {
+                        margin-top: 0;
+                        height: 70vh;
+    
+                        .content {
+                            height: 45vh;
+                        }
+    
+                        .bg-image {
+                            height: 25vh;
+                        }
+                    }
+    
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+    
+                    &:hover span {
+                        opacity: 1;
+                    }
+    
+                    &:hover .bg-image img {
+                        transform: scale(1.2);
+                    }
+    
+                    .bg-image {
+                        position: relative;
+                        overflow: hidden;
+                        width: 350px;
+                        height: 20vh;
+    
+                        img {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: .5s ease-in-out;
+                        }
+                    }
+    
+                    .content {
+                        margin-left: 20px;
+                        margin-right: 20px;
+                        height: 40vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: left;
+                        justify-content: space-between;
+    
+                        .title {
+                            font-size: 1.6em;
+                            margin-top: 18px;
+                        }
+    
+                        .paragraph {
+                            margin: 0;
+                            // font-size: 1.3em;
+                        }
+    
+                        .price {
+                            font-size: 1em;
+                            margin-bottom: 18px;
+                        }
+                    }
+    
+                    span {
+                        position: absolute;
+                        bottom: -10px;
+                        width: 100%;
+                        height: 3px;
+                        background: $hover-color;
+                        transition: .5s ease-in-out;
+                        opacity: 0;
+                    }
+                }
             }
         }
 
-        .cards {
-            height: 70vh;
-            width: 80vw;
-            display: flex;
-            gap: 40px;
+        @media (max-width: 1150px) {
 
-            .card {
-                margin-top: 80px;
-                width: 350px;
-                height: 500px;
-                box-shadow: 0px 0px 15px 0px $box-shadow;
-                transition: .5s ease-in-out;
+            .container {
+                scroll-snap-type: none;
+            }
 
-                &.middle {
-                    margin-top: 0;
-                    height: 580px;
+            section {
+                scroll-snap-align: none;
+                min-height: 100vh;
+                height: fit-content;
 
-                    .content {
-                        height: 380px;
-                    }
-                }
-
-                &:hover {
-                    transform: translateY(-10px);
-                }
-
-                &:hover span {
-                    opacity: 1;
-                }
-
-                &:hover .bg-image img {
-                    transform: scale(1.2);
-                }
-
-                .bg-image {
-                    position: relative;
-                    overflow: hidden;
-                    width: 350px;
-                    height: 200px;
-
-                    img {
-                        position: relative;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transition: .5s ease-in-out;
-                    }
-                }
-
-                .content {
-                    margin-left: 20px;
-                    margin-right: 20px;
-                    height: 300px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: left;
-                    justify-content: space-between;
-
-                    .title {
-                        font-size: 1.6em;
-                        margin-top: 18px;
-                    }
+                .heading {
+                    margin: 60px 50px 20px 50px;
 
                     .paragraph {
                         margin: 0;
-                        font-size: 1.3em;
-                    }
-
-                    .price {
-                        font-size: 1em;
-                        margin-bottom: 18px;
                     }
                 }
 
-                span {
-                    position: absolute;
-                    bottom: -10px;
-                    width: 100%;
-                    height: 3px;
-                    background: $hover-color;
-                    transition: .5s ease-in-out;
-                    opacity: 0;
+                .cards {
+                    flex-direction: column;
+                    height: fit-content;
+
+                    .card {
+                        width: 80vw;
+                        height: 40vh;
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 0;
+
+                        &:last-child {
+                            margin-bottom: 40px;
+                        }
+
+                        &.middle {
+                            height: 40vh;
+                            width: 80vw;
+
+                            .content {
+                                height: 40vh;
+                                width: 50vw;
+                            }
+    
+                            .bg-image {
+                                width: 30vw;
+                                height: 40vh;
+                            }
+                        }
+
+                        .content {
+                            height: 40vh;
+                            width: 50vw;
+                        }
+
+                        .bg-image {
+                            width: 30vw;
+                            height: 40vh;
+                        }
+                    }
                 }
             }
         }
 
+        @media (max-width: 560px) {
+
+            section {
+                .heading {
+                    margin: 70px 50px 20px 50px;
+
+                    .paragraph {
+                        margin: 0;
+                    }
+                }
+
+                .cards {
+                    height: fit-content;
+
+                    .card {
+                        width: 80vw;
+                        height: fit-content;
+                        display: grid;
+                        margin-top: 0;
+
+                        &:last-child {
+                            margin-bottom: 40px;
+                        }
+
+                        &.middle {
+                            height: fit-content;
+                            width: 80vw;
+
+                            .content {
+                                height: fit-content;
+                                width: 50vw;
+                            }
+    
+                            .bg-image {
+                                width: 100%;
+                                height: 10vh;
+                            }
+                        }
+
+                        .content {
+                            height: fit-content;
+                            width: 50vw;
+                        }
+
+                        .bg-image {
+                            width: 100%;
+                            height: 20vh;
+                        }
+                    }
+                }
+            }
+        }
+    
+        section:nth-child(even) {
+            background: $font-color;
+        }
     }
 
-    section:nth-child(odd) {
-        background: #111;
-    }
 }

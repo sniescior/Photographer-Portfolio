@@ -78,21 +78,19 @@ body .menu ul li a:hover {
   color: #4B6587;
 }
 
-body .container {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
-  background: #fff;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+body .menu ul li a.current {
+  font-weight: 800;
 }
 
-body .container .main-header {
-  z-index: 5;
+body .menu ul li a.current:hover {
+  -webkit-transform: none;
+          transform: none;
+  color: #111;
+  cursor: default;
+}
+
+body .main-header {
+  z-index: 1;
   position: fixed;
   width: 100vw;
   max-height: 80px;
@@ -103,13 +101,21 @@ body .container .main-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
-body .container .main-header.scrolled {
+body .main-header.active {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+}
+
+body .main-header.scrolled {
   background: #fff;
+  z-index: 2;
 }
 
-body .container .main-header .logo {
+body .main-header .logo {
   margin: 30px;
   font-size: 1.2em;
   position: relative;
@@ -121,18 +127,18 @@ body .container .main-header .logo {
           align-items: center;
 }
 
-body .container .main-header .logo a {
+body .main-header .logo a {
   text-decoration: none;
   color: #111;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
 
-body .container .main-header .logo a:hover {
+body .main-header .logo a:hover {
   color: #4B6587;
 }
 
-body .container .main-header .toggle {
+body .main-header .toggle {
   margin: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,12 +152,25 @@ body .container .main-header .toggle {
   transition: .4s ease-in-out;
 }
 
+body .container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  background: #fff;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
 body .container.active {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
 
-body section {
+body .container section {
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
@@ -170,72 +189,80 @@ body section {
           justify-content: center;
 }
 
-body section .heading {
+body .container section .heading {
+  z-index: 1;
   text-align: center;
 }
 
-body section .heading .title {
+body .container section .heading .title {
   font-size: 2em;
   font-weight: 800;
   margin: 0 0 12px 0;
 }
 
-body section .heading .subtitle {
+body .container section .heading .subtitle {
   font-size: 1.3em;
   font-weight: 500;
   margin-top: 0;
 }
 
-body section .cards {
+body .container section .cards {
   height: 70vh;
   width: 80vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 40px;
 }
 
-body section .cards .card {
+body .container section .cards .card {
   margin-top: 80px;
   width: 350px;
-  height: 500px;
+  height: 60vh;
   -webkit-box-shadow: 0px 0px 15px 0px #9D9D9D;
           box-shadow: 0px 0px 15px 0px #9D9D9D;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
 
-body section .cards .card.middle {
+body .container section .cards .card.middle {
   margin-top: 0;
-  height: 580px;
+  height: 70vh;
 }
 
-body section .cards .card.middle .content {
-  height: 380px;
+body .container section .cards .card.middle .content {
+  height: 45vh;
 }
 
-body section .cards .card:hover {
+body .container section .cards .card.middle .bg-image {
+  height: 25vh;
+}
+
+body .container section .cards .card:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
 }
 
-body section .cards .card:hover span {
+body .container section .cards .card:hover span {
   opacity: 1;
 }
 
-body section .cards .card:hover .bg-image img {
+body .container section .cards .card:hover .bg-image img {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-body section .cards .card .bg-image {
+body .container section .cards .card .bg-image {
   position: relative;
   overflow: hidden;
   width: 350px;
-  height: 200px;
+  height: 20vh;
 }
 
-body section .cards .card .bg-image img {
+body .container section .cards .card .bg-image img {
   position: relative;
   width: 100%;
   height: 100%;
@@ -245,10 +272,10 @@ body section .cards .card .bg-image img {
   transition: .5s ease-in-out;
 }
 
-body section .cards .card .content {
+body .container section .cards .card .content {
   margin-left: 20px;
   margin-right: 20px;
-  height: 300px;
+  height: 40vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,22 +291,21 @@ body section .cards .card .content {
           justify-content: space-between;
 }
 
-body section .cards .card .content .title {
+body .container section .cards .card .content .title {
   font-size: 1.6em;
   margin-top: 18px;
 }
 
-body section .cards .card .content .paragraph {
+body .container section .cards .card .content .paragraph {
   margin: 0;
-  font-size: 1.3em;
 }
 
-body section .cards .card .content .price {
+body .container section .cards .card .content .price {
   font-size: 1em;
   margin-bottom: 18px;
 }
 
-body section .cards .card span {
+body .container section .cards .card span {
   position: absolute;
   bottom: -10px;
   width: 100%;
@@ -290,7 +316,123 @@ body section .cards .card span {
   opacity: 0;
 }
 
-body section:nth-child(odd) {
+@media (max-width: 1150px) {
+  body .container .container {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+  }
+  body .container section {
+    scroll-snap-align: none;
+    min-height: 100vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .container section .heading {
+    margin: 60px 50px 20px 50px;
+  }
+  body .container section .heading .paragraph {
+    margin: 0;
+  }
+  body .container section .cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .container section .cards .card {
+    width: 80vw;
+    height: 40vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 0;
+  }
+  body .container section .cards .card:last-child {
+    margin-bottom: 40px;
+  }
+  body .container section .cards .card.middle {
+    height: 40vh;
+    width: 80vw;
+  }
+  body .container section .cards .card.middle .content {
+    height: 40vh;
+    width: 50vw;
+  }
+  body .container section .cards .card.middle .bg-image {
+    width: 30vw;
+    height: 40vh;
+  }
+  body .container section .cards .card .content {
+    height: 40vh;
+    width: 50vw;
+  }
+  body .container section .cards .card .bg-image {
+    width: 30vw;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 560px) {
+  body .container section .heading {
+    margin: 70px 50px 20px 50px;
+  }
+  body .container section .heading .paragraph {
+    margin: 0;
+  }
+  body .container section .cards {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .container section .cards .card {
+    width: 80vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -ms-grid;
+    display: grid;
+    margin-top: 0;
+  }
+  body .container section .cards .card:last-child {
+    margin-bottom: 40px;
+  }
+  body .container section .cards .card.middle {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 80vw;
+  }
+  body .container section .cards .card.middle .content {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 50vw;
+  }
+  body .container section .cards .card.middle .bg-image {
+    width: 100%;
+    height: 10vh;
+  }
+  body .container section .cards .card .content {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 50vw;
+  }
+  body .container section .cards .card .bg-image {
+    width: 100%;
+    height: 20vh;
+  }
+}
+
+body .container section:nth-child(even) {
   background: #111;
 }
 /*# sourceMappingURL=style.css.map */

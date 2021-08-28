@@ -78,6 +78,17 @@ body .menu ul li a:hover {
   color: #4B6587;
 }
 
+body .menu ul li a.current {
+  font-weight: 800;
+}
+
+body .menu ul li a.current:hover {
+  -webkit-transform: none;
+          transform: none;
+  color: #111;
+  cursor: default;
+}
+
 body .container {
   overflow: hidden;
   position: relative;
