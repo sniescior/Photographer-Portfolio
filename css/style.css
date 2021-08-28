@@ -425,7 +425,7 @@ body .container section .cards .card span {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    width: 50vw;
+    width: 80%;
   }
   body .container section .cards .card.middle .bg-image {
     width: 100%;
@@ -435,7 +435,7 @@ body .container section .cards .card span {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    width: 50vw;
+    width: 80%;
   }
   body .container section .cards .card .bg-image {
     width: 100%;
