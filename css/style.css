@@ -189,6 +189,10 @@ body .container section {
   position: relative;
 }
 
+body .container section#animate-section {
+  height: auto;
+}
+
 body .container section .heading {
   margin: 60px 50px 20px 50px;
   z-index: 1;
@@ -624,6 +628,35 @@ body .container section .section-wrapper .section-banner .box:nth-child(11) {
 body .container section:nth-child(even) {
   background: #111;
   color: #eee;
+}
+
+body .container section .portrait-wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body .container section .portrait-wrapper .p-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 0 5vw;
+}
+
+body .container section .portrait-wrapper .p-cards .p-card {
+  margin: 20px 20px;
+}
+
+body .container section .portrait-wrapper .p-cards .p-card img {
+  position: relative;
+  max-width: 30vw;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 @media (max-width: 1150px) {

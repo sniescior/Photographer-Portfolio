@@ -38,3 +38,28 @@ document.addEventListener('click', (event) => {
         toggleMenu();
     }
 });
+
+// animate portraits slider on scroll  
+
+var tl = new TimelineMax({onUpdate:updatePercentage});
+
+const controller = new ScrollMagic.Controller();
+
+
+// tl.from("#animate-cards", 5, {x:500});
+tl.to("#animate-cards", 1, {x:-900});
+
+const scene = new ScrollMagic.Scene({
+    triggerElement: "#animate-heading",
+    triggerHook: "onLeave",
+    duration: "100%"
+})
+    .setPin(".p-cards")
+    .setTween(tl)
+        .addTo(controller);
+        
+
+function updatePercentage() {
+    tl.progress();
+    console.log(tl.progress())
+}

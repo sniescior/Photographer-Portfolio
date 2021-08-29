@@ -152,6 +152,10 @@ body {
             align-items: center;
             justify-content: center;
             position: relative;
+
+            &#animate-section {
+                height: auto;
+            }
     
             .heading {
                 margin: 60px 50px 20px 50px;
@@ -490,6 +494,30 @@ body {
             &:nth-child(even) {
                 background: $font-color;
                 color: $contrast-font-color;
+            }
+
+            .portrait-wrapper {
+                width: 100vw;
+                overflow-x: hidden;
+
+                .p-cards {
+                    display: flex;
+                    justify-content: left;
+                    // width: 100vw;
+                    margin: 0 5vw;
+
+                    .p-card {
+                        margin: 20px 20px;
+
+                        img {
+                            position: relative;
+                            max-width: 30vw;
+                            height: 50vh;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                }
             }
 
         }
