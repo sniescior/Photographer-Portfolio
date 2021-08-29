@@ -697,6 +697,10 @@ body .container section .portrait-wrapper .content-wrapper .content-card h2 {
   font-weight: 800;
 }
 
+body .container section .portrait-wrapper .content-wrapper .content-card .triggerElement {
+  margin-top: 40px;
+}
+
 @media (max-width: 800px) {
   body .container section .portrait-wrapper .content-wrapper .content-card {
     min-height: 450px;
