@@ -46,8 +46,8 @@ var tl = new TimelineMax({onUpdate:updatePercentage});
 const controller = new ScrollMagic.Controller();
 
 
-// tl.from("#animate-cards", 5, {x:500});
-tl.to("#animate-cards", 3, {x:-1100});
+tl.from("#animate-cards", 5, {x:500});
+tl.to("#animate-cards", 50, {x:-3800});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#animate-heading",
