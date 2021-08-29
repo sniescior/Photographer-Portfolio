@@ -47,19 +47,18 @@ const controller = new ScrollMagic.Controller();
 
 
 // tl.from("#animate-cards", 5, {x:500});
-tl.to("#animate-cards", 3, {x:-1000});
+tl.to("#animate-cards", 3, {x:-1100});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#animate-heading",
     triggerHook: "onLeave",
     duration: "100%"
 })
-    .setPin(".p-cards")
+    .setPin(".image-cards")
     .setTween(tl)
         .addTo(controller);
         
 
 function updatePercentage() {
     tl.progress();
-    console.log(tl.progress())
 }

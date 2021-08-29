@@ -189,6 +189,13 @@ body .container section {
   position: relative;
 }
 
+body .container section#animate-section {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  height: auto;
+}
+
 body .container section .heading {
   margin: 60px 50px 20px 50px;
   z-index: 1;
@@ -669,7 +676,7 @@ body .container section .portrait-wrapper .image-cards .image-card img {
     margin: 60px 20px 50px 20px;
   }
   body .container section .heading.event-heading {
-    margin: 20px 20px 10px 20px;
+    margin: 0px 20px 10px 20px;
   }
   body .container section .heading .paragraph {
     margin: 0;
