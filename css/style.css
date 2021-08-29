@@ -5,7 +5,7 @@ body {
   padding: 0;
   background: #fff;
   color: #111;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 body .menu {
@@ -104,6 +104,10 @@ body .main-header {
           justify-content: space-between;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
 body .main-header.active {
@@ -155,7 +159,6 @@ body .main-header .toggle {
 
 body .container {
   overflow-x: hidden;
-  overflow-y: scroll;
   position: relative;
   width: 100vw;
   -webkit-transition: .4s ease-in-out;

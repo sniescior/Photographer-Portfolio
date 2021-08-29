@@ -150,8 +150,9 @@
         var container = document.querySelector('.container');
         let menu = document.querySelector('.main-header');
 
-        container.addEventListener('scroll', () => {
-            if(container.scrollTop > 15) {
+        $(window).on('scroll', () => {
+            
+            if($(window).scrollTop() > 55) {
                 menu.classList.add('scrolled');
             } else {
                 menu.classList.remove('scrolled');
