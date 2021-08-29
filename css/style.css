@@ -631,7 +631,7 @@ body .container section .portrait-wrapper {
   overflow-x: hidden;
 }
 
-body .container section .portrait-wrapper .p-cards {
+body .container section .portrait-wrapper .image-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -641,11 +641,11 @@ body .container section .portrait-wrapper .p-cards {
   margin: 0 5vw;
 }
 
-body .container section .portrait-wrapper .p-cards .p-card {
+body .container section .portrait-wrapper .image-cards .image-card {
   margin: 20px 20px;
 }
 
-body .container section .portrait-wrapper .p-cards .p-card img {
+body .container section .portrait-wrapper .image-cards .image-card img {
   position: relative;
   max-width: 800px;
   height: 50vh;
