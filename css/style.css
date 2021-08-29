@@ -154,13 +154,10 @@ body .main-header .toggle {
 }
 
 body .container {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
   width: 100vw;
-  height: 100vh;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   background: #fff;
@@ -172,7 +169,6 @@ body .container.active {
 }
 
 body .container section {
-  scroll-snap-align: start;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -634,11 +630,8 @@ body .container section:nth-child(even) {
 @media (max-width: 1150px) {
   body .container .container {
     height: auto;
-    -ms-scroll-snap-type: none;
-        scroll-snap-type: none;
   }
   body .container section {
-    scroll-snap-align: none;
     min-height: 100vh;
     height: -webkit-fit-content;
     height: -moz-fit-content;
