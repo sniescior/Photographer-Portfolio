@@ -47,7 +47,7 @@ const controller = new ScrollMagic.Controller();
 
 
 // tl.from("#animate-cards", 5, {x:500});
-tl.to("#animate-cards", 1, {x:-900});
+tl.to("#animate-cards", 1, {x:-2000});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#animate-heading",

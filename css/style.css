@@ -651,7 +651,7 @@ body .container section .portrait-wrapper .p-cards .p-card {
 
 body .container section .portrait-wrapper .p-cards .p-card img {
   position: relative;
-  max-width: 30vw;
+  max-width: 800px;
   height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
