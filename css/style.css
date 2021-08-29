@@ -651,39 +651,6 @@ body .container section .portrait-wrapper .image-cards .social-media-card a:hove
   color: #4B6587;
 }
 
-body .container section .portrait-wrapper .image-cards .content-card {
-  margin: 20px 20px;
-  max-height: 50vh;
-  min-width: 500px;
-  -webkit-box-shadow: 0 0 15px 0 #9D9D9D;
-          box-shadow: 0 0 15px 0 #9D9D9D;
-}
-
-body .container section .portrait-wrapper .image-cards .content-card h2 {
-  min-width: 200px;
-  text-align: center;
-  padding: 30px 30px 0 30px;
-  font-weight: 800;
-}
-
-body .container section .portrait-wrapper .image-cards .content-card ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-body .container section .portrait-wrapper .image-cards .content-card ul li {
-  font-size: 1.2em;
-  font-weight: 500;
-  padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body .container section .portrait-wrapper .image-cards .content-card ul li:nth-child(odd) {
-  width: 100%;
-  background: #eee;
-}
-
 body .container section .portrait-wrapper .image-cards .image-card {
   margin: 20px 20px;
 }
@@ -696,6 +663,53 @@ body .container section .portrait-wrapper .image-cards .image-card img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+body .container section .portrait-wrapper .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container section .portrait-wrapper .content-wrapper .content-card {
+  margin: 20px 20px;
+  width: 40vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 45vh;
+  -webkit-box-shadow: 0 0 15px 0 #9D9D9D;
+          box-shadow: 0 0 15px 0 #9D9D9D;
+}
+
+body .container section .portrait-wrapper .content-wrapper .content-card h2 {
+  text-align: center;
+  padding: 20px 20px 0 20px;
+  font-weight: 800;
+}
+
+body .container section .portrait-wrapper .content-wrapper .content-card ul {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+
+body .container section .portrait-wrapper .content-wrapper .content-card ul li {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
+body .container section .portrait-wrapper .content-wrapper .content-card ul li:nth-child(odd) {
+  background: #eee;
 }
 
 @media (max-width: 1150px) {
