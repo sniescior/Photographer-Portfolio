@@ -3,7 +3,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #be0000;
   color: #111;
   overflow-y: scroll;
 }
@@ -112,7 +112,7 @@ body .main-header.active {
 }
 
 body .main-header.scrolled {
-  background: #fff;
+  background: #be0000;
   z-index: 2;
 }
 
@@ -162,7 +162,7 @@ body .container {
   width: 100vw;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
-  background: #fff;
+  background: #be0000;
 }
 
 body .container.active {
@@ -368,7 +368,7 @@ body .container section .section-wrapper {
 
 body .container section .section-wrapper .content {
   z-index: 1;
-  background: #fff;
+  background: #be0000;
   width: 36vw;
   min-height: 60vh;
   margin: 0 4vh;
