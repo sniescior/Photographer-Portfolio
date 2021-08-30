@@ -52,7 +52,7 @@ tl.to("#animate-cards", 50, {x:-2000});
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
-    duration: "100%"
+    duration: $("#portrait-wrapper").width()
 })
     .setPin(".image-cards")
     .setTween(tl)
