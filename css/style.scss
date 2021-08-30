@@ -485,6 +485,7 @@ body {
                 .image-cards {
                     display: flex;
                     min-width: fit-content;
+                    // min-width: 1000px;
                     justify-content: left;
                     margin: 0 5vw;
 
@@ -493,6 +494,7 @@ body {
                         flex-direction: column;
                         justify-content: center;
                         margin: 20px 0;
+                        padding-right: 30px;
                         max-height: 50vh;
 
                         a {
@@ -519,7 +521,7 @@ body {
                         
                         img {
                             position: relative;
-                            // max-width: 800px;
+                            width: 300px;
                             height: 50vh;
                             object-fit: cover;
                             object-position: center;
