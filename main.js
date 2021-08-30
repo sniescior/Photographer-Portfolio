@@ -1,5 +1,8 @@
-function toggleMenu() {
+$(window).on('scroll', () => {
+    if(document.querySelector('.menu').classList.contains('toggled')) toggleMenu();
+});
 
+function toggleMenu() {
     var menuToggle = document.querySelector('.menu');
     var container = document.querySelector('.container');
     var button  = document.querySelector('.button');
@@ -66,6 +69,7 @@ const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
     duration: $('#image-cards').width()
+    // duration: $('#image-cards').outerWidth()
 })
     .setPin(".image-cards")
     .setTween(tl)
@@ -73,8 +77,5 @@ const scene = new ScrollMagic.Scene({
         
 
 function updatePercentage() {
-    console.log($(window.innerWidth));
-    console.log($('#image-cards').width());
-    console.log($('#image-cards').outerWidth());
     tl.progress();
 }
