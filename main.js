@@ -63,6 +63,12 @@ const controller = new ScrollMagic.Controller();
 var x = $('#image-cards').innerWidth() + $(window.innerWidth);
 
 var scrollMagicTo = $('#image-cards').outerWidth();
+console.log(scrollMagicTo);
+if(scrollMagicTo < 1000) {
+    scrollMagicTo = scrollMagicTo*3;
+}
+
+console.log(scrollMagicTo);
 
 tl.from("#image-cards", 5, {x:0});
 // tl.to("#image-cards", 50, {x:-($('#image-cards').outerWidth())});  // <--- this kinda works
