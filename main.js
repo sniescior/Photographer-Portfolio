@@ -6,12 +6,16 @@ function toggleMenu() {
     var nav = document.querySelector('.main-header');
     var toggle = document.querySelector('.toggle');
 
-    if(scene.state() != 'DURING') {
+    if($('.image-cards').length > 0) { // check if .image-cards exists in the doument
+        if(scene.state() != 'DURING') {
+            container.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+        if(scene.state() == 'DURING') {
+            toggle.classList.toggle('active');
+        }
+    } else {
         container.classList.toggle('active');
-        nav.classList.toggle('active');
-    }
-
-    if(scene.state() == 'DURING') {
         toggle.classList.toggle('active');
     }
 
