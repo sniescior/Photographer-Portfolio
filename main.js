@@ -71,8 +71,8 @@ tl.to("#image-cards", 50, {x:-((scrollMagicTo))});
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
-    duration: $('#image-cards').width()
-    // duration: $('#image-cards').outerWidth()
+    // duration: $('#image-cards').width()
+    duration: $('#image-cards').outerWidth()
 })
     .setPin(".image-cards")
     .setTween(tl)
