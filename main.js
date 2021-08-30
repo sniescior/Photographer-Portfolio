@@ -56,7 +56,7 @@ const controller = new ScrollMagic.Controller();
 var x = $('#image-cards').innerWidth() + $(window.innerWidth);
 
 tl.from("#image-cards", 5, {x:0});
-tl.to("#image-cards", 50, {x:-($('#image-cards').innerWidth() - $(window).innerWidth())});
+tl.to("#image-cards", 50, {x:-($('#image-cards').innerWidth() - $(window).innerWidth() + $(window).innerHeight())});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
