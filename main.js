@@ -47,12 +47,12 @@ const controller = new ScrollMagic.Controller();
 
 
 tl.from("#animate-cards", 5, {x:0});
-tl.to("#animate-cards", 50, {x:-2000});
+tl.to("#animate-cards", 50, {x:-$("#animate-cards").width()-800});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
-    duration: $("#portrait-wrapper").width()
+    duration: $("#animate-cards").width()
 })
     .setPin(".image-cards")
     .setTween(tl)
