@@ -59,16 +59,15 @@ document.addEventListener('click', (event) => {
 var tl = new TimelineMax({onUpdate:updatePercentage});
 
 const controller = new ScrollMagic.Controller();
-var scrollMagicTo = $('#image-cards').outerWidth();
+var imagesContainerWidth = $('#image-cards').outerWidth() - ($('#image-cards').outerWidth())/8;
 
 tl.from("#image-cards", 5, {x:0});
-// tl.to("#image-cards", 50, {x:-($('#image-cards').outerWidth())});  // <--- this kinda works
-tl.to("#image-cards", 50, {x:-((scrollMagicTo))});
+tl.to("#image-cards", 50, {x:-((imagesContainerWidth))});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
-    duration: "100%"
+    duration: imagesContainerWidth
 })
     .setPin(".image-cards")
     .setTween(tl)

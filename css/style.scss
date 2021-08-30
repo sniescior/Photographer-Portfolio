@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
 $background-theme: #fff;
 $menu-theme: #fff;
 $button-theme: #111;
@@ -494,7 +496,7 @@ body {
                         flex-direction: column;
                         justify-content: center;
                         margin: 20px 0;
-                        padding-right: 30px;
+                        padding-left: 50px;
                         max-height: 50vh;
 
                         a {
@@ -561,6 +563,13 @@ body {
                         height: inherit;
                         box-shadow: 0 0 15px 0 $box-shadow;
                         transition: .5s ease-in-out;
+
+                        .price {
+                            text-align: center;
+                            font-size: 1em;
+                            padding-bottom: 10px;
+                            font-weight: 700;
+                        }
 
                         @media (max-width: 1150px) {
                             width: 40vw;
@@ -753,8 +762,13 @@ body {
             background: $font-color;
             min-height: 100vh;
             width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1em;
+            font-size: 2em;
         }
-
     }
 
     @media (max-width: 650px) {
