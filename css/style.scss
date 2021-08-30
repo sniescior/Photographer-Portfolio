@@ -125,11 +125,15 @@ body {
 
         .toggle {
             margin: 30px;
-            display: flex;
+            display: inline-block;
             align-items: center;
             font-size: 1.7em;
             cursor: pointer;
             transition: .4s ease-in-out;
+
+            &.active {
+                transform: translateX(-300px);
+            }
         }
     }
 
@@ -155,7 +159,6 @@ body {
             position: relative;
 
             &#animate-section {
-                // padding-top: 1r0px;
                 justify-content: end;
                 height: auto;
             }
@@ -481,6 +484,7 @@ body {
                 
                 .image-cards {
                     display: flex;
+                    min-width: fit-content;
                     justify-content: left;
                     margin: 0 5vw;
 
@@ -510,13 +514,12 @@ body {
                         }
                     }
                     
-                    
                     .image-card {
                         margin: 20px 20px;
                         
                         img {
                             position: relative;
-                            max-width: 800px;
+                            // max-width: 800px;
                             height: 50vh;
                             object-fit: cover;
                             object-position: center;

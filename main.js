@@ -3,12 +3,20 @@ function toggleMenu() {
     var menuToggle = document.querySelector('.menu');
     var container = document.querySelector('.container');
     var button  = document.querySelector('.button');
-    var nav = document.querySelector('.main-header')
+    var nav = document.querySelector('.main-header');
+    var toggle = document.querySelector('.toggle');
+
+    if(scene.state() != 'DURING') {
+        container.classList.toggle('active');
+        nav.classList.toggle('active');
+    }
+
+    if(scene.state() == 'DURING') {
+        toggle.classList.toggle('active');
+    }
 
     // toggle menu and move the whole container
     menuToggle.classList.toggle('toggled');
-    container.classList.toggle('active');
-    nav.classList.toggle('active');
 
     // change button icon
     if(button.classList.contains('icon-menu')) {
@@ -46,13 +54,13 @@ var tl = new TimelineMax({onUpdate:updatePercentage});
 const controller = new ScrollMagic.Controller();
 
 
-tl.from("#animate-cards", 5, {x:0});
-tl.to("#animate-cards", 50, {x:-$("#animate-cards").width()-800});
+tl.from("#image-cards", 5, {x:0});
+tl.to("#image-cards", 50, {x:-$('#image-cards').innerWidth()});
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
     triggerHook: "onLeave",
-    duration: $("#animate-cards").width()
+    duration: $('#image-cards').width()
 })
     .setPin(".image-cards")
     .setTween(tl)
@@ -60,5 +68,7 @@ const scene = new ScrollMagic.Scene({
         
 
 function updatePercentage() {
+    console.log($(window.innerWidth));
+    console.log($('#image-cards').width());
     tl.progress();
 }

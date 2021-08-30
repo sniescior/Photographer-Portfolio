@@ -141,9 +141,7 @@ body .main-header .logo a:hover {
 
 body .main-header .toggle {
   margin: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -151,6 +149,11 @@ body .main-header .toggle {
   cursor: pointer;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+}
+
+body .main-header .toggle.active {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
 }
 
 body .container {
@@ -615,6 +618,9 @@ body .container section .portrait-wrapper .image-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -661,7 +667,6 @@ body .container section .portrait-wrapper .image-cards .image-card {
 
 body .container section .portrait-wrapper .image-cards .image-card img {
   position: relative;
-  max-width: 800px;
   height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
