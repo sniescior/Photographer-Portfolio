@@ -889,6 +889,10 @@ body {
                         cursor: pointer;
                         transition: .3s ease-in-out;
 
+                        @media screen and (max-width: 720px) {
+                            padding: 15px 30px;
+                        }
+
                         &:hover {
                             background: #FF4C29;
                         }

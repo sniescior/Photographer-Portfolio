@@ -1087,6 +1087,12 @@ body .container footer .subscription form .btn {
   transition: .3s ease-in-out;
 }
 
+@media screen and (max-width: 720px) {
+  body .container footer .subscription form .btn {
+    padding: 15px 30px;
+  }
+}
+
 body .container footer .subscription form .btn:hover {
   background: #FF4C29;
 }
