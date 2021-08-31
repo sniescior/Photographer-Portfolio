@@ -772,7 +772,7 @@ body {
             background: $font-color;
 
             @media screen and (max-width: 1210px) {
-                justify-content: center;
+                justify-content: left;
             }
 
             .title {
@@ -794,7 +794,7 @@ body {
 
             .subscription {
                 width: 100vw;
-                padding: 80px;
+                padding: 80px 0;
                 height: fit-content;
                 position: relative;
                 display: flex;
@@ -803,8 +803,8 @@ body {
                 justify-content: center;
 
                 .heading {
-                    width: 100vw;
-                    
+                    width: 100%;
+
                     .title {
                         font-size: 2.4em;
                         text-align: center;
@@ -919,7 +919,8 @@ body {
                 padding: 45px 30px;
 
                 @media screen and (max-width: 1210px) {
-                    max-width: 90vw;
+                    max-width: 100%;
+                    width: 90vw;
                     padding-bottom: 0;
                 }
 
@@ -966,13 +967,12 @@ body {
                 flex-direction: column;
                 justify-content: space-between;
 
-                @media screen and (max-width: 1210px) {
-                }
 
                 @media screen and (max-width: 700px) {
+                    max-width: 100%;
                     width: 90vw;
-                    max-width: 90vw;
                     padding-bottom: 0;
+                    padding-left: 30px;
                 }
 
                 ul {

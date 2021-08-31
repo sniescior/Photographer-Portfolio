@@ -942,9 +942,9 @@ body .container footer {
 
 @media screen and (max-width: 1210px) {
   body .container footer {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
 }
 
@@ -967,7 +967,7 @@ body .container footer .title::after {
 
 body .container footer .subscription {
   width: 100vw;
-  padding: 80px;
+  padding: 80px 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -988,7 +988,7 @@ body .container footer .subscription {
 }
 
 body .container footer .subscription .heading {
-  width: 100vw;
+  width: 100%;
 }
 
 body .container footer .subscription .heading .title {
@@ -1128,7 +1128,8 @@ body .container footer .about {
 
 @media screen and (max-width: 1210px) {
   body .container footer .about {
-    max-width: 90vw;
+    max-width: 100%;
+    width: 90vw;
     padding-bottom: 0;
   }
 }
@@ -1186,9 +1187,10 @@ body .container footer .contact {
 
 @media screen and (max-width: 700px) {
   body .container footer .contact {
+    max-width: 100%;
     width: 90vw;
-    max-width: 90vw;
     padding-bottom: 0;
+    padding-left: 30px;
   }
 }
 
