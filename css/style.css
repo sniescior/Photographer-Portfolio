@@ -201,7 +201,7 @@ body .container section#animate-section {
 }
 
 body .container section .heading {
-  margin: 60px 50px 20px 50px;
+  margin: 20px 50px 20px 50px;
   z-index: 1;
   text-align: center;
 }
@@ -817,7 +817,7 @@ body .container section .portrait-wrapper .content-wrapper .content-card ul li:n
     height: fit-content;
   }
   body .container section .heading {
-    margin: 60px 20px 50px 20px;
+    margin: 20px 20px 50px 20px;
   }
   body .container section .heading.event-heading {
     margin: 30px 20px 10px 20px !important;
