@@ -2,6 +2,17 @@ $(window).on('scroll', () => {
     if(document.querySelector('.menu').classList.contains('toggled')) toggleMenu();
 });
 
+var container = document.querySelector('.container');
+let menu = document.querySelector('.main-header');
+
+$(window).on('scroll', () => {        
+    if($(window).scrollTop() > 55) {
+        menu.classList.add('scrolled');
+    } else {
+        menu.classList.remove('scrolled');
+    }
+})
+
 function toggleMenu() {
     var menuToggle = document.querySelector('.menu');
     var container = document.querySelector('.container');
