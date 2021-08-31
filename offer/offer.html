@@ -211,6 +211,24 @@
         </section>
         
         <footer>
+            <div class="subscription">
+                <div class="bannerImg">
+                    <img src="../resources/gallery/about/banner.jpg" alt="">
+                </div>
+                <div class="heading">
+                    <h2 class="title" style="font-size: 2.4em;">
+                        Enter Your email to get a free guide on how to prepare for a photo shoot.
+                    </h2>
+                </div>
+                <form id="form">
+                    <input type="text" id="name" class="field" placeholder="Your Name">
+
+                    <input type="text" name="" id="email" class="field" placeholder="Your Email" onkeydown="validation()">
+                    <span id="text"></span>
+
+                    <button class="btn" onclick="validation()">Send</button>
+                </form>
+            </div>
             <div class="about">
                 <h2 class="title">
                     About me

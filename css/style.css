@@ -949,7 +949,7 @@ body .container footer {
 }
 
 body .container footer .title {
-  font-size: 2.4em;
+  font-size: 2.2em;
   position: relative;
   margin: 0;
 }
@@ -959,10 +959,145 @@ body .container footer .title::after {
   position: absolute;
   left: 0;
   bottom: -8px;
-  width: 100px;
+  width: 33%;
   border-radius: 1px;
   height: 8px;
   background-color: #4B6587;
+}
+
+body .container footer .subscription {
+  width: 100vw;
+  height: 300px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container footer .subscription .heading .title {
+  font-size: 2.4em;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body .container footer .subscription .heading .title::after {
+  display: none;
+}
+
+body .container footer .subscription form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  z-index: 1;
+  margin-top: 30px;
+}
+
+body .container footer .subscription form .field {
+  margin: 0 10px;
+  background-color: #171717;
+  outline: none;
+  padding: 8px;
+  font-size: .8em;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  border-radius: 3px;
+  border: 2px solid #171717;
+  color: #eee;
+}
+
+@media screen and (max-width: 720px) {
+  body .container footer .subscription form .field#email {
+    width: 90vw;
+  }
+  body .container footer .subscription form .field#name {
+    width: 90vw;
+  }
+}
+
+body .container footer .subscription form .field#email {
+  width: 300px;
+}
+
+@media screen and (max-width: 720px) {
+  body .container footer .subscription form .field#email {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+body .container footer .subscription form .field#name {
+  width: 200px;
+}
+
+@media screen and (max-width: 720px) {
+  body .container footer .subscription form .field#name {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+body .container footer .subscription form .field:hover {
+  -webkit-filter: opacity(0.8);
+          filter: opacity(0.8);
+}
+
+body .container footer .subscription form .field:focus {
+  background: #fff;
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
+  border: 2px solid #be0000;
+  color: #111;
+}
+
+body .container footer .subscription form .btn {
+  margin: 0 10px;
+  padding: 9px 30px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-size: .8em;
+  background-color: #be0000;
+  color: #eee;
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container footer .subscription form .btn:hover {
+  background: #FF4C29;
+}
+
+body .container footer .subscription .bannerImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: opacity(0.7);
+          filter: opacity(0.7);
+}
+
+body .container footer .subscription .bannerImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 body .container footer .about {
