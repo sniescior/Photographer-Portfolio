@@ -967,7 +967,10 @@ body .container footer .title::after {
 
 body .container footer .subscription {
   width: 100vw;
-  height: 300px;
+  padding: 80px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -982,6 +985,10 @@ body .container footer .subscription {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+body .container footer .subscription .heading {
+  width: 100vw;
 }
 
 body .container footer .subscription .heading .title {
@@ -1121,8 +1128,7 @@ body .container footer .about {
 
 @media screen and (max-width: 1210px) {
   body .container footer .about {
-    width: 90vw;
-    max-width: 100%;
+    max-width: 90vw;
     padding-bottom: 0;
   }
 }
@@ -1181,7 +1187,7 @@ body .container footer .contact {
 @media screen and (max-width: 700px) {
   body .container footer .contact {
     width: 90vw;
-    max-width: 100%;
+    max-width: 90vw;
     padding-bottom: 0;
   }
 }
