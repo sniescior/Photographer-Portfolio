@@ -1072,14 +1072,14 @@ body .container footer .subscription form .field:focus {
   color: #111;
 }
 
-body .container footer .subscription form .btn {
+body .container footer .subscription form .subscribe-button {
   margin: 0 10px;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 3px;
   outline: none;
   border: none;
-  font-size: .8em;
+  font-size: 1.2em;
   background-color: #be0000;
   color: #eee;
   cursor: pointer;
@@ -1088,12 +1088,12 @@ body .container footer .subscription form .btn {
 }
 
 @media screen and (max-width: 720px) {
-  body .container footer .subscription form .btn {
+  body .container footer .subscription form .subscribe-button {
     padding: 10px 30px;
   }
 }
 
-body .container footer .subscription form .btn:hover {
+body .container footer .subscription form .subscribe-button:hover {
   background: #FF4C29;
 }
 
