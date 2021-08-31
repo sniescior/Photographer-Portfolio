@@ -709,7 +709,11 @@ body {
 
             section {
                 .heading {
-                    margin: 20px 50px 0 50px;
+                    margin: 90px 50px 20px 50px;
+
+                    &.animate-heading {
+                        margin-top: 20px;
+                    }
 
                     .paragraph {
                         margin: 0;

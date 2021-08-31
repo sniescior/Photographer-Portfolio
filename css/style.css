@@ -873,7 +873,10 @@ body .container section .portrait-wrapper .content-wrapper .content-card ul li:n
 
 @media (max-height: 500px), (max-width: 560px) {
   body .container section .heading {
-    margin: 20px 50px 0 50px;
+    margin: 90px 50px 20px 50px;
+  }
+  body .container section .heading.animate-heading {
+    margin-top: 20px;
   }
   body .container section .heading .paragraph {
     margin: 0;
