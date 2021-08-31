@@ -30,7 +30,7 @@ function toggleMenu() {
         }
     } else {
         container.classList.toggle('active');
-        toggle.classList.toggle('active');
+        nav.classList.toggle('active');
     }
 
     // toggle menu and move the whole container
