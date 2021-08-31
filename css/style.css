@@ -924,22 +924,195 @@ body .container section .portrait-wrapper .content-wrapper .content-card ul li:n
 }
 
 body .container footer {
-  background: #111;
-  min-height: 100vh;
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100vw;
+  min-height: 50vh;
+  color: #eee;
+  background: #111;
+}
+
+body .container footer .title {
+  font-size: 2.4em;
+  position: relative;
+  margin: 0;
+}
+
+body .container footer .title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100px;
+  border-radius: 1px;
+  height: 8px;
+  background-color: #4B6587;
+}
+
+body .container footer .about {
+  max-width: 550px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 45px 30px;
+}
+
+body .container footer .about p {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+body .container footer .about p a {
+  color: #4B6587;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body .container footer .about p a:hover {
+  text-decoration: underline;
+  color: #C9CCD5;
+}
+
+body .container footer .about .social-media-icons a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #eee;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container footer .about .social-media-icons a:first-child {
+  margin: 0 20px 0 0;
+}
+
+body .container footer .about .social-media-icons a:hover {
+  color: #C9CCD5;
+}
+
+body .container footer .contact {
+  padding: 45px 30px;
+  position: relative;
+  max-width: 50vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .container footer .contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body .container footer .contact ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 1em;
-  font-size: 2em;
+  margin: 20px 0 0 0;
+  font-size: 1.4em;
+}
+
+body .container footer .contact ul li i {
+  margin: 0 20px 0 0;
+}
+
+body .container footer .contact ul li p {
+  margin: 0;
+}
+
+body .container footer .links {
+  padding: 45px 30px;
+  position: relative;
+  max-width: 50vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .container footer .links ul {
+  padding: 0;
+}
+
+body .container footer .links ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+body .container footer .links ul li a {
+  color: #eee;
+  text-decoration: none;
+  margin: 20px 0 0 0;
+  font-size: 1.4em;
+  position: relative;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+body .container footer .links ul li a i {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+body .container footer .links ul li a:hover {
+  -webkit-transform: translateX(4px);
+          transform: translateX(4px);
+  padding-right: 4px;
+  color: #C9CCD5;
+}
+
+body .container footer .links ul li a:hover i {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  opacity: 1;
 }
 
 @media (max-width: 650px) {
