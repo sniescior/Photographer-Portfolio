@@ -16,7 +16,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: $background-theme;
+    background: $button-theme;
     color: $font-color;
     overflow-y: scroll;
     
@@ -767,6 +767,10 @@ body {
             color: $contrast-font-color;
             background: $font-color;
 
+            @media screen and (max-width: 1210px) {
+                justify-content: center;
+            }
+
             .title {
                 font-size: 2.4em;
                 position: relative;
@@ -785,13 +789,19 @@ body {
             }
 
             .about {
-                max-width: 550px;
+                max-width: 33%;
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 height: fit-content;
                 padding: 45px 30px;
+
+                @media screen and (max-width: 1210px) {
+                    width: 90vw;
+                    max-width: 100%;
+                    padding-bottom: 0;
+                }
 
                 p {
                     font-size: 1.2em;
@@ -836,6 +846,15 @@ body {
                 flex-direction: column;
                 justify-content: space-between;
 
+                @media screen and (max-width: 1210px) {
+                }
+
+                @media screen and (max-width: 700px) {
+                    width: 90vw;
+                    max-width: 100%;
+                    padding-bottom: 0;
+                }
+
                 ul {
                     list-style-type: none;
                     padding: 0;
@@ -865,6 +884,12 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+
+                @media screen and (max-width: 700px) {
+                    width: 90vw;
+                    max-width: 100%;
+                }
+
                 ul {
                     padding: 0;
 
