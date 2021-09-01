@@ -24,12 +24,19 @@
   position: absolute;
   font-size: 1.7em;
   display: block;
-  bottom: 30px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  top: 30px;
+  right: -300px;
   cursor: pointer;
   visibility: hidden;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.menu .a-toggle.visible {
+  -webkit-transform: translate(-330px, 0);
+          transform: translate(-330px, 0);
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
 }
 
 .menu ul {
@@ -85,7 +92,7 @@
     width: 100vw;
     right: -130vw;
   }
-  .menu .a-toggle .icon-cancel {
+  .menu .a-toggle {
     visibility: visible;
   }
 }

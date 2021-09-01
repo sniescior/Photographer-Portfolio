@@ -19,6 +19,9 @@ function toggleMenu() {
     var button  = document.querySelector('.button');
     var nav = document.querySelector('.main-header');
     var toggle = document.querySelector('.toggle');
+    var aToggle = document.querySelector('.a-toggle');
+
+    aToggle.classList.toggle('visible');
 
     if($('.image-cards').length > 0) { // check if .image-cards exists in the doument
         if(scene.state() != 'DURING') {
