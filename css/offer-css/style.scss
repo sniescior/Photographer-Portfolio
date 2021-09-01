@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 $background-theme: #fff;
-$menu-theme: #fff;
 $button-theme: #111;
 $font-color: #111;
 $box-shadow: #9D9D9D;
@@ -9,7 +8,6 @@ $hover-color: #4B6587;
 $contrast-font-color: #eee;
 $contrast-background: #171717;
 $second-hover-color: #C9CCD5;
-
 
 body {
     width: 100vw;
@@ -19,126 +17,6 @@ body {
     background: $button-theme;
     color: $font-color;
     overflow-y: scroll;
-    
-    .menu {
-        z-index: 10;
-        height: 100vh;
-        position: fixed;
-        width: 300px;
-        right: -350px;
-        text-align: center;
-        background: $menu-theme;
-        transition: .4s ease-in-out;
-        box-shadow: 0px 0px 15px 0px $box-shadow;
-        opacity: 0;
-        
-        &.toggled {
-            right: 0;
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .a-toggle {
-            color: $font-color;
-            position: absolute;
-            font-size: 1.7em;
-            display: block;
-            bottom: 30px;
-            left: 50%;
-            transform: translate(-50%, 0);
-            cursor: pointer;
-            visibility: hidden;
-        }
-
-        ul {
-            padding: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 0;
-            list-style-type: none;
-            
-            li {
-                margin-top: 10px;
-                margin-bottom: 10px;
-                
-                a {
-                    display: block;
-                    text-decoration: none;
-                    font-size: 1.4em;
-                    color: $font-color;
-                    transition: .4s ease-in-out;
-                    
-                    &:hover {
-                        transform: translateX(3px);
-                        color: $hover-color;
-                    }
-
-                    &.current {
-                        font-weight: 800;
-
-                        &:hover {
-                            transform: none;
-                            color: $font-color;
-                            cursor: default;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .main-header {
-        z-index: 1;
-        position: fixed;
-        width: 100vw;
-        max-height: 80px;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        transition: .4s ease-in-out;
-
-        &.active {
-            transform: translateX(-300px);
-        }
-
-        &.scrolled {
-            background: $background-theme;
-            z-index: 2;
-        }
-
-        .logo {
-            margin: 30px;
-            font-size: 1.2em;
-            position: relative;
-            display: flex;
-            align-items: center;
-
-            a {
-                text-decoration: none;
-                color: $font-color;
-                transition: .2s ease-in-out;
-
-                &:hover {
-                    color: $hover-color;
-                }
-            }
-        }
-
-        .toggle {
-            margin: 30px;
-            display: inline-block;
-            align-items: center;
-            font-size: 1.7em;
-            cursor: pointer;
-            transition: .4s ease-in-out;
-
-            &.active {
-                transform: translateX(-300px);
-            }
-        }
-    }
 
     .container {
         overflow-x: hidden;
@@ -648,7 +526,7 @@ body {
                 height: fit-content;
 
                 .heading {
-                    margin: 20px 20px 50px 20px;
+                    margin: 90px 20px 50px 20px;
 
                     &.event-heading {
                         margin: 30px 20px 10px 20px !important;
@@ -1056,21 +934,6 @@ body {
                 }
             }
 
-        }
-    }
-
-    @media (max-width: 650px) {
-        .menu {
-            width: 100vw;
-            z-index: 1000;
-            right: -130vw;
-            overflow: hidden;
-
-            .a-toggle {
-                .icon-cancel {
-                    visibility: visible;
-                }
-            }
         }
     }
 

@@ -1,6 +1,15 @@
+$background-theme: #fff;
+$button-theme: #111;
+$font-color: #111;
+$box-shadow: #9D9D9D;
+$hover-color: #4B6587;
+$contrast-font-color: #fff;
+
 body {
     background-color: #fff;
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 
     .container {
         display: flex;
@@ -9,6 +18,7 @@ body {
         align-items: center;
         height: 100vh;
         text-align: center;
+        transition: .4s ease-in-out;
 
         h2 {
             font-weight: 500;
@@ -41,7 +51,7 @@ body {
             span {
                 position: absolute;
                 top: -1px;
-                left: -20px;
+                left: 0;
                 display: block;
                 border-radius: 0;
                 width: 30px;
@@ -50,6 +60,10 @@ body {
                 animation: drive 3s ease 0s infinite normal none;
             }
         }
+
+        &.active {
+            transform: translateX(-300px);
+        }
     }
 }
 
@@ -57,6 +71,6 @@ body {
     0% {
         transform: translateX(0);
     } 50% {
-        transform: translateX(200px);
+        transform: translateX(170px);
     } 
 }
