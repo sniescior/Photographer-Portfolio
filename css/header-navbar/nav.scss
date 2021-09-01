@@ -140,6 +140,11 @@ $hover-color: #4B6587;
 
         &.active {
             transform: translateX(-300px);
+
+            @media screen and (max-width: 650px) {
+                transform: translateX(300px);
+            }
+
         }
     }
 

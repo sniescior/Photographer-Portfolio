@@ -171,6 +171,13 @@
           transform: translateX(-300px);
 }
 
+@media screen and (max-width: 650px) {
+  .main-header .toggle.active {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+}
+
 @media screen and (max-width: 800px) {
   .main-header {
     width: 100vw;
