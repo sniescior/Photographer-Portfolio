@@ -7,9 +7,9 @@
     <title>Fp - contact</title>
 
     <link rel="stylesheet" href="../css/header-navbar/nav.css">
-    <link rel="stylesheet" href="../css/contact-css/style.css">
     <link rel="stylesheet" href="../css/footer/footer.css">
     <link rel="stylesheet" href="../css/fontello.css">
+    <link rel="stylesheet" href="../css/contact-css/style.css">
 </head>
 <body>
     <nav class="menu" id="main-menu">
@@ -26,20 +26,25 @@
         <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
     </header>
     <div class="container">
-        <div class="contact-box">
-            <div class="left"></div>
-            <form id="form" class="right">
-                <h2>Contact me</h2>
-                <input type="text" class="field" placeholder="Your Name">
 
-                <input type="text" name="" id="email" class="field" placeholder="Your Email" onkeydown="validation()">
-                <span id="text"></span>
-
-                <input type="text" class="field" placeholder="Your Phone">
-                <textarea class="field area" placeholder="Message"></textarea>
-                <button class="btn" onclick="validation()">Send</button>
-            </form>
-        </div>
+        <section>
+            <div class="contact-box">
+                <div class="left">
+                    <!-- <img src="../resources/contact/banner.jpg" alt=""> -->
+                </div>
+                <form id="form" class="right">
+                    <h2>Contact me</h2>
+                    <input type="text" class="field" placeholder="Your Name">
+    
+                    <input type="text" name="" id="email" class="field" placeholder="Your Email" onkeydown="validation()">
+                    <span id="text"></span>
+    
+                    <input type="text" class="field" placeholder="Your Phone">
+                    <textarea class="field area" placeholder="Message"></textarea>
+                    <button class="btn" onclick="validation()">Send</button>
+                </form>
+            </div>
+        </section>
 
         <footer>
             <div class="subscription">
