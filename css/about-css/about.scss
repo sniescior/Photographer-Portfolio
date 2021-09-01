@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        transition: .4s ease-in-out;
+    
+        &.active {
+            transform: translateX(-300px);
+        }
+
+        .line {
+            width: 200px;
+            height: 5px;
+            background-color: #999;
+            position: relative;
+
+            span {
+                position: absolute;
+                background-color: #111;
+                width: 0;
+                height: 7px;
+                top: -1px;
+                right: 50%;
+                transform: translateX(50%);
+                transition: .5s ease-in-out;
+            }
+
+            &:hover {
+                span {
+                    animation: expand .5s timing-function delay iteration-count direction fill-mode;
+                }
+            }
+        }
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    } to {
+        width: 100px;
+    }
+}

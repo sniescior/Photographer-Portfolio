@@ -6,6 +6,7 @@ $hover-color: #4B6587;
 $contrast-font-color: #eee;
 $contrast-background: #171717;
 $second-hover-color: #C9CCD5;
+$third-hover-color: #BD4B4B;
 
 footer {
     display: flex;
@@ -140,7 +141,7 @@ footer {
                 }
 
                 &:hover {
-                    background: #FF4C29;
+                    background: $third-hover-color;
                 }
             }
         }
