@@ -135,22 +135,25 @@ body {
                     color: $hover-color;
                     width: fit-content;
                     margin: 1em auto 1em auto;
+                    transition: 5s ease-in-out;
 
                     &.hide {
+                        transform: translateY(-500px);
                         display: none;
                     }
         
                     &::after {
                         content: '';
                         display: block;
-                        width: 50px;
+                        width: 30%;
                         height: 4px;
                         background-color: $second-hover-color;
                         transition: .4s ease-in-out;
                     }
         
                     &:hover::after {
-                        width: 100px;
+                        width: 100%;
+                        background-color: $hover-color;
                     }
                 }
             }

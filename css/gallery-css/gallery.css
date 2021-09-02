@@ -172,10 +172,14 @@ body .container section.vanilla .show-more-button {
   width: -moz-fit-content;
   width: fit-content;
   margin: 1em auto 1em auto;
+  -webkit-transition: 5s ease-in-out;
+  transition: 5s ease-in-out;
 }
 
 body .container section.vanilla .show-less-button.hide,
 body .container section.vanilla .show-more-button.hide {
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
   display: none;
 }
 
@@ -183,7 +187,7 @@ body .container section.vanilla .show-less-button::after,
 body .container section.vanilla .show-more-button::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 30%;
   height: 4px;
   background-color: #C9CCD5;
   -webkit-transition: .4s ease-in-out;
@@ -192,6 +196,7 @@ body .container section.vanilla .show-more-button::after {
 
 body .container section.vanilla .show-less-button:hover::after,
 body .container section.vanilla .show-more-button:hover::after {
-  width: 100px;
+  width: 100%;
+  background-color: #4B6587;
 }
 /*# sourceMappingURL=gallery.css.map */
