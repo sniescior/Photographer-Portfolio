@@ -37,7 +37,6 @@ body .container.active {
 
 body .container section {
   width: 100vw;
-  min-height: 50vh;
 }
 
 body .container section:nth-child(1) {
@@ -96,8 +95,9 @@ body .container section.vanilla {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -125,9 +125,15 @@ body .container section.vanilla .cards {
 
 body .container section.vanilla .card {
   cursor: pointer;
-  width: 30vw;
+  width: 100%;
+  max-width: 30vw;
   height: 40vh;
   margin: 1em;
+  margin-bottom: 0;
+}
+
+body .container section.vanilla .card.hidden {
+  display: none;
 }
 
 body .container section.vanilla .card img {
@@ -139,8 +145,22 @@ body .container section.vanilla .card img {
      object-position: center;
 }
 
-body .container section.vanilla .inner-text {
+@media screen and (max-width: 960px) {
+  body .container section.vanilla .card {
+    max-width: 45vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body .container section.vanilla .card {
+    max-width: 80vw;
+  }
+}
+
+body .container section.vanilla .show-less-button,
+body .container section.vanilla .show-more-button {
   text-align: center;
+  display: block;
   cursor: pointer;
   z-index: 1;
   font-size: 1.2em;
@@ -151,10 +171,16 @@ body .container section.vanilla .inner-text {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto 1em auto;
+  margin: 1em auto 1em auto;
 }
 
-body .container section.vanilla .inner-text::after {
+body .container section.vanilla .show-less-button.hide,
+body .container section.vanilla .show-more-button.hide {
+  display: none;
+}
+
+body .container section.vanilla .show-less-button::after,
+body .container section.vanilla .show-more-button::after {
   content: '';
   display: block;
   width: 50px;
@@ -164,7 +190,8 @@ body .container section.vanilla .inner-text::after {
   transition: .4s ease-in-out;
 }
 
-body .container section.vanilla .inner-text:hover::after {
+body .container section.vanilla .show-less-button:hover::after,
+body .container section.vanilla .show-more-button:hover::after {
   width: 100px;
 }
 /*# sourceMappingURL=gallery.css.map */

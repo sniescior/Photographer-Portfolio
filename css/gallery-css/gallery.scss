@@ -33,7 +33,6 @@ body {
 
         section {
             width: 100vw;
-            min-height: 50vh;
 
             &:nth-child(1) {
                 margin-top: 80px;
@@ -83,7 +82,7 @@ body {
 
             &.vanilla {
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 margin-top: 3em;
@@ -98,9 +97,15 @@ body {
 
                 .card {
                     cursor: pointer;
-                    width: 30vw;
+                    width: 100%;
+                    max-width: 30vw;
                     height: 40vh;
                     margin: 1em;
+                    margin-bottom: 0;
+
+                    &.hidden {
+                        display: none;
+                    }
 
                     img {
                         width: 100%;
@@ -108,10 +113,20 @@ body {
                         object-fit: cover;
                         object-position: center;
                     }
+
+                    @media screen and (max-width: 960px) {
+                        max-width: 45vw;
+                    }
+    
+                    @media screen and (max-width: 700px) {
+                        max-width: 80vw;
+                    }
                 }
 
-                .inner-text {
+                .show-less-button,
+                .show-more-button {
                     text-align: center;
+                    display: block;
                     cursor: pointer;
                     z-index: 1;
                     font-size: 1.2em;
@@ -119,7 +134,11 @@ body {
                     transition: .3s ease-in-out;
                     color: $hover-color;
                     width: fit-content;
-                    margin: 0 auto 1em auto;
+                    margin: 1em auto 1em auto;
+
+                    &.hide {
+                        display: none;
+                    }
         
                     &::after {
                         content: '';
