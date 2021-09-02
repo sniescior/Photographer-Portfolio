@@ -27,6 +27,7 @@ body .container {
   text-align: center;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+  overflow: hidden;
 }
 
 body .container.active {
