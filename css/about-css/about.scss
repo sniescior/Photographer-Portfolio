@@ -1,4 +1,11 @@
+$background-theme: #fff;
+$button-theme: #111;
+$font-color: #111;
+$box-shadow: #9D9D9D;
 $hover-color: #4B6587;
+$contrast-font-color: #eee;
+$contrast-background: #171717;
+$second-hover-color: #C9CCD5;
 
 body {
     padding: 0;
@@ -6,6 +13,113 @@ body {
     font-family: sans-serif;
 
     .container {
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+        width: 100vw;
+        transition: .4s ease-in-out;
+        background: $background-theme;
 
+        &.active {
+            transform: translateX(-300px);
+        }
+
+        .banner {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heading {
+            margin: 20px 50px 20px 50px;
+            z-index: 1;
+            text-align: center;
+
+            .title {
+                font-size: 2em;
+                font-weight: 800;
+                margin: 0 0 12px 0;
+            }
+
+            .subtitle {
+                font-size: 1.3em;
+                font-weight: 500;
+                margin-top: 0;
+            }
+        }
+
+        // css for development state form this point
+        p {
+            font-size: 1.5em;
+            margin: 10px 40px 0 40px;
+
+            a {
+                font-size: 2em;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #111;
+                font-weight: 700;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    left: 0;
+                    bottom: 0;
+                    width: 33px;
+                    background-color: $hover-color;
+                    height: 4px;
+                    transition: .2s ease-in-out;
+                }
+
+                &:hover {
+                    color: $hover-color;
+
+                    &::after {
+                        width: 0;
+                    }
+                }
+            }
+        }
+    
+        &.active {
+            transform: translateX(-300px);
+        }
+
+        .line {
+            width: 200px;
+            height: 5px;
+            background-color: #eee;
+            position: relative;
+
+            span {
+                position: absolute;
+                background-color: #555;
+                display: block;
+                width: 20px;
+                height: 7px;
+                top: -1px;
+                left: 0;
+                transition: .5s ease-in-out;
+                animation: expand 5s ease 0s infinite normal none;
+            }
+        }
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: translateX(0);
+    } 50% {
+        transform: translateX(180px);
+    } 100% {
+        transform: translateX(0);
     }
 }

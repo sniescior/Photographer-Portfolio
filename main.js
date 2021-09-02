@@ -5,11 +5,11 @@ $(window).on('scroll', () => {
 var container = document.querySelector('.container');
 let menu = document.querySelector('.main-header');
 
-$(window).on('scroll', () => {        
+$(window).on('scroll', () => {
     if($(window).scrollTop() > 55) {
         menu.classList.add('scrolled');
     } else {
-        menu.classList.remove('scrolled');
+        if(!menu.classList.contains('bg-white')) menu.classList.remove('scrolled');
     }
 });
 

@@ -110,6 +110,10 @@
           justify-content: space-between;
 }
 
+.main-header.bg-white {
+  background-color: #fff;
+}
+
 .main-header.full-width {
   width: 100vw;
   max-height: 80px;

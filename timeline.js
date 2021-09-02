@@ -4,9 +4,9 @@ const controller = new ScrollMagic.Controller();
 // var imagesContainerWidth = $('#image-cards').outerWidth() - ($('#image-cards').outerWidth())/8;
 var imagesContainerWidth = $('#image-cards').outerWidth() - ($('#image-cards').outerWidth())/5;
 
-tl.from("#image-cards", 5, {x:0});
+tl.from("#image-cards", 1, {x:0});
 // tl.to("#image-cards", 50, {x:-((imagesContainerWidth))});
-tl.to("#image-cards", 50, {x:-((imagesContainerWidth))}, Linear);
+tl.to("#image-cards", 1, {x:-((imagesContainerWidth))}, Linear);
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",

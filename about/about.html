@@ -7,7 +7,9 @@
     <title>Fp - about me</title>
 
     <link rel="stylesheet" href="../css/header-navbar/nav.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
     <link rel="stylesheet" href="../css/fontello.css">
+    <link rel="stylesheet" href="../css/about-css/about.css">
     <link rel="stylesheet" href="../css/about-css/about.css">
 </head>
 <body>
@@ -24,9 +26,84 @@
         <h2 class="logo"><a href="../index.html">Fancy photographer</a></h2>
         <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
     </header>
-    <div class="container">
+<div class="container">
+    <section class="banner">
+        <div class="heading">
+            <h2 class="title">
+                Hi, I'm Simon
+            </h2>
+            <h4 class="subtitle">
+            </h4>
+        </div>
+
+        <div class="line">
+            <span></span>
+        </div>
+        <h2>Still needs some work done around here. Please check  back later...</h2>
+        <p>
+            <a href="../index.html">home page</a>
+            <a href="../gallery/gallery.html">gallery</a>
+            <a href="../offer/offer.html">offer section</a>
+            <a href="../contact/contact.html">contact info</a>
+        </p>
+
+    </section>
         
-    </div>
+    <footer>
+        <div class="subscription">
+            <div class="bannerImg">
+                <img src="../resources/gallery/about/banner.jpg" alt="">
+            </div>
+            <div class="heading">
+                <h2 class="title" style="font-size: 2.4em;">
+                    Enter Your email to get a free guide on how to prepare for a photo shoot.
+                </h2>
+            </div>
+            <form id="form">
+                <input type="text" id="name" class="field" placeholder="Your Name">
+
+                <input type="text" name="" id="email" class="field" placeholder="Your Email" onkeydown="validation()">
+                <span id="text"></span>
+
+                <button class="subscribe-button" onclick="validation()">Send</button>
+            </form>
+        </div>
+        <div class="about">
+            <h2 class="title">
+                About me
+            </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus corrupti sequi temporibus? Minus eligendi consequuntur voluptas atque sint facere ullam? <a href="#">Read more...</a></p>
+            <div class="social-media-icons">
+                <a href="#">
+                    <i class="icon-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="icon-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="contact">
+            <h2 class="title">
+                Get in touch
+            </h2>
+            <ul>
+                <li><i class="icon-phone"></i><p>023 1456 9912</p></li>
+                <li><i class="icon-mail"></i><p>fancy-photographer@&#8203;contact.com</p></li>
+                <li><i class="icon-location"></i><p>123 Street, London</p></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h2 class="title">
+                Useful links
+            </h2>
+            <ul>
+                <li><a href="../offer/offer.html">Offer<i class="icon-right-small"></a></i></li>
+                <li><a href="../about/about.html">About me<i class="icon-right-small"></a></i></li>
+                <li><a href="../gallery/gallery.html">Gallery<i class="icon-right-small"></a></i></li>
+            </ul>
+        </div>
+    </footer>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="../main.js"></script>

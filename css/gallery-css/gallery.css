@@ -1,4 +1,9 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -24,111 +29,65 @@ body .container {
   transition: .4s ease-in-out;
 }
 
-body .container h2 {
-  font-size: 2em;
-  margin: 20px 40px 0 40px;
-}
-
-body .container p {
-  font-size: 1.5em;
-  margin: 10px 40px 0 40px;
-}
-
-body .container p a {
-  font-size: 2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #111;
-  font-weight: 700;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body .container p a::after {
-  content: '';
-  display: inline-block;
-  left: 0;
-  bottom: 0;
-  width: 33px;
-  background-color: #4B6587;
-  height: 4px;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
-}
-
-body .container p a:hover {
-  color: #4B6587;
-}
-
-body .container p a:hover::after {
-  width: 0;
-}
-
 body .container.active {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
 
-body .container .line {
-  width: 200px;
-  height: 5px;
-  background-color: #eee;
-  position: relative;
+body .container section {
+  width: 100vw;
+  height: 50vh;
 }
 
-body .container .line span {
-  position: absolute;
-  background-color: #555;
-  display: block;
-  width: 20px;
-  height: 7px;
-  top: -1px;
-  left: 0;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  -webkit-animation: expand 5s ease 0s infinite normal none;
-          animation: expand 5s ease 0s infinite normal none;
+body .container section:nth-child(1) {
+  margin-top: 80px;
 }
 
-@-webkit-keyframes expand {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  50% {
-    -webkit-transform: translateX(180px);
-            transform: translateX(180px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+body .container section.parallax {
+  width: 100vw;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-@keyframes expand {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  50% {
-    -webkit-transform: translateX(180px);
-            transform: translateX(180px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+body .container section.parallax .heading {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container section.parallax .heading h2 {
+  margin: 0;
+  padding: 50px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #eee;
+  text-shadow: 4px 4px #111;
+}
+
+body .container section.parallax:nth-of-type(1) {
+  background-image: url("../../resources/gallery/weddings/wedding-gallery-banner.jpg");
+}
+
+body .container section.parallax:nth-child(3) {
+  background-image: url("../../resources/gallery/events/event-gallery-banner.jpg");
+}
+
+body .container section.parallax:nth-child(5) {
+  background-image: url("../../resources/gallery/portraits/portrait-gallery-banner.jpg");
+}
+
+body .container section.parallax:nth-child(7) {
+  background-image: url("../../resources/gallery/business/business-gallery-banner.jpg");
 }
 /*# sourceMappingURL=gallery.css.map */
