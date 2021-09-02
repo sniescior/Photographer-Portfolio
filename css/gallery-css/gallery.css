@@ -37,7 +37,7 @@ body .container.active {
 
 body .container section {
   width: 100vw;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 body .container section:nth-child(1) {
@@ -90,5 +90,81 @@ body .container section.parallax:nth-child(5) {
 
 body .container section.parallax:nth-child(7) {
   background-image: url("../../resources/gallery/business/business-gallery-banner.jpg");
+}
+
+body .container section.vanilla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3em;
+}
+
+body .container section.vanilla .cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .container section.vanilla .card {
+  cursor: pointer;
+  width: 30vw;
+  height: 40vh;
+  margin: 1em;
+}
+
+body .container section.vanilla .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+body .container section.vanilla .inner-text {
+  text-align: center;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.2em;
+  font-weight: 900;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  color: #4B6587;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 1em auto;
+}
+
+body .container section.vanilla .inner-text::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #C9CCD5;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+body .container section.vanilla .inner-text:hover::after {
+  width: 100px;
 }
 /*# sourceMappingURL=gallery.css.map */

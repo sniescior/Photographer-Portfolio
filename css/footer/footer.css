@@ -7,7 +7,6 @@ footer {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100vw;
-  min-height: 50vh;
   color: #eee;
   background: #111;
   text-align: left;
