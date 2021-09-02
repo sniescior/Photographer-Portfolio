@@ -6,7 +6,7 @@ var imagesContainerWidth = $('#image-cards').outerWidth() - ($('#image-cards').o
 
 tl.from("#image-cards", 5, {x:0});
 // tl.to("#image-cards", 50, {x:-((imagesContainerWidth))});
-tl.to("#image-cards", 50, {x:-((imagesContainerWidth))});
+tl.to("#image-cards", 50, {x:-((imagesContainerWidth))}, Linear);
 
 const scene = new ScrollMagic.Scene({
     triggerElement: "#triggerElement",
