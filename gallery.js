@@ -1,7 +1,5 @@
 var cards = document.querySelectorAll('.card');
 
-var BreakException = {}
-
 function activeImage() {
     var counter = 0;
     var activeImageIndex = -1;
@@ -18,15 +16,55 @@ function activeImage() {
     return activeImageIndex;
 }
 
+function previousImage() {
+    var previousImageIndex = activeImage() - 1;
+    var buttonMoveLeft = document.getElementById('button-left');
+    var buttonMoveRight = document.getElementById('button-right')
+    var counter = 0;
+
+    buttonMoveRight.classList.remove('hidden');
+
+    if(previousImageIndex == 0) {
+        buttonMoveLeft.classList.add('hidden');
+    }
+
+    cards.forEach(card => {
+        if(counter == previousImageIndex) {
+            card.classList.add('previous');
+        }
+        counter++;
+    });
+
+    cards.forEach(card => {
+        if(card.classList.contains('next')) {
+            card.classList.remove('next');
+        }
+        if(card.classList.contains('preview')) {
+            card.classList.add('next');
+            card.classList.remove('preview');
+        }
+        if(card.classList.contains('previous')) {
+            card.classList.add('preview');
+            if(card.classList.contains('hidden')) {
+                card.classList.add('shown');
+                card.classList.remove('hidden');
+            }
+            card.classList.remove('previous');
+        }
+    });
+}
+
 function nextImage() {
-    var activeImageIndex = activeImage();
     var nextImageIndex = activeImage() + 1;
-    // var previousImageIndex = activeImage() - 1;
     var buttonMoveLeft = document.getElementById('button-left')
+    var buttonMoveRight = document.getElementById('button-right')
+    var counter = 0;
 
     buttonMoveLeft.classList.remove('hidden');
 
-    var counter = 0;
+    if(nextImageIndex == cards.length - 1) {
+        buttonMoveRight.classList.add('hidden');
+    }
 
     cards.forEach(card => {
         if(counter == nextImageIndex) {
@@ -60,6 +98,11 @@ function nextImage() {
 
 function clickedImage(thisCard) {
 
+    cards.forEach(card => {
+        card.classList.remove('next');
+        card.classList.remove('previous');
+    });
+
     var showLessButtons = document.querySelectorAll('.show-less-button');
 
     buttonMoveRight = document.getElementById('button-right');
@@ -80,8 +123,6 @@ function clickedImage(thisCard) {
 
     showLessButtons.forEach(buttonElement => {
         if(sameParent(buttonElement, thisCard)) {
-            console.log(buttonElement.parentNode.id);
-
             if(buttonElement.classList.contains('hide')) {
                 // most of the images in parent should be hidden
                 cards.forEach(card => {
@@ -92,7 +133,7 @@ function clickedImage(thisCard) {
                 })
             }
         }
-    })
+    });
 
     document.body.classList.toggle('gallery-active');
 }
