@@ -27,6 +27,10 @@
         <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
     </header>
     <div class="container">
+
+        <button id="button-right" class="hidden"><i class="icon-right-big"></i></button>
+        <button id="button-left" class="hidden"><i class="icon-left-big"></i></button>
+
         <section class="parallax">
             <div class="heading">
                 <h2>Weddings</h2>
@@ -34,14 +38,50 @@
         </section>
         <section class="vanilla" id="weddings">
             <div class="cards">
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/weddings/wedding1.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/weddings/wedding2.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/weddings/wedding3.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding4.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding5.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding6.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding7.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding8.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding9.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding10.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding11.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding12.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding13.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding14.jpg" alt="">
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/weddings/wedding15.jpg" alt="">
                 </div>
             </div>
             <h2 class="show-more-button" onclick="showMore(this);">LOAD MORE WEDDING PHOTOS</h2>
@@ -54,28 +94,28 @@
         </section>
         <section class="vanilla" id="events">
             <div class="cards">
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box7.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box5.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box6.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
+                <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box2.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
+                <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box3.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
+                <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box8.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
+                <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box10.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
+                <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box11.jpg" alt="">    
                 </div>
             </div>
@@ -89,29 +129,29 @@
         </section>
         <section class="vanilla" id="portraits">
             <div class="cards">
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/portraits/portrait2.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/portraits/portrait5.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/portraits/portrait7.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait2.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/portraits/portrait1.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait5.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/portraits/portrait3.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait7.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/portraits/portrait4.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait5.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/portraits/portrait6.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait7.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/portraits/portrait8.jpg" alt="">    
                 </div>
             </div>
             <h2 class="show-more-button" onclick="showMore(this);">LOAD MORE PORTRAITS</h2>
@@ -124,20 +164,29 @@
         </section>
         <section class="vanilla" id="business">
             <div class="cards">
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/business/conference1.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/business/conference2.jpg" alt="">    
                 </div>
-                <div class="card" onclick="clickedImage();">
+                <div class="card" onclick="clickedImage(this);">
                     <img src="../resources/gallery/business/conference3.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait5.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/business/conference4.jpg" alt="">    
                 </div>
-                <div class="card hidden" onclick="clickedImage();">
-                    <img src="../resources/gallery/portraits/portrait7.jpg" alt="">    
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/business/conference5.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/business/conference6.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/business/conference7.jpg" alt="">    
+                </div>
+                <div class="card hidden" onclick="clickedImage(this);">
+                    <img src="../resources/gallery/business/conference9.jpg" alt="">    
                 </div>
             </div>
             <h2 class="show-more-button" onclick="showMore(this);">LOAD MORE</h2>

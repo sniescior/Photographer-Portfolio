@@ -16,6 +16,11 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background-color: $button-theme;
+    
+    &.gallery-active {
+        overflow: hidden;
+    }
 
     .container {
         display: flex;
@@ -26,6 +31,65 @@ body {
         text-align: center;
         transition: .4s ease-in-out;
         overflow: hidden;
+        background-color: $background-theme;
+
+        #button-right {
+            position: fixed;
+            cursor: pointer;
+            z-index: 10001;
+            top: 50%;
+            right: 20px;
+            border: none;
+            outline: none;
+            padding: 12px;
+            background: $background-theme;
+            transform: translateY(-50%);
+            margin: 0;
+            transition: .5s ease-in-out;
+            transition-delay: .3s;
+            border-radius: 50%;
+            opacity: .7;
+            box-shadow: 0 0 15px 0 $font-color;
+
+            &:hover {
+                transition-delay: 0s;
+                opacity: 1;
+            }
+
+            &.hidden {
+                right: -300px;
+                opacity: 0;
+            }
+        }
+
+        #button-left {
+            position: fixed;
+            cursor: pointer;
+            z-index: 10001;
+            top: 50%;
+            left: 20px;
+            border: none;
+            outline: none;
+            padding: 12px;
+            border-radius: 50%;
+            background: $background-theme;
+            transform: translateY(-50%);
+            margin: 0;
+            transition: .5s ease-in-out;
+            transition-delay: .3s;
+            opacity: .7;
+            box-shadow: 0 0 15px 0 $font-color;
+
+            &:hover {
+                transition-delay: 0s;
+                opacity: 1;
+            }
+
+            &.hidden {
+                left: -300px;
+                opacity: 0;
+            }
+        }
 
         &.active {
             transform: translateX(-300px);
@@ -63,19 +127,19 @@ body {
                     }
                 }
     
-                &:nth-of-type(1) {
+                &:nth-child(3) {
                     background-image: url('../../resources/gallery/weddings/wedding-gallery-banner.jpg');
                 }
     
-                &:nth-child(3) {
+                &:nth-child(5) {
                     background-image: url('../../resources/gallery/events/event-gallery-banner.jpg');
                 }
     
-                &:nth-child(5) {
+                &:nth-child(7) {
                     background-image: url('../../resources/gallery/portraits/portrait-gallery-banner.jpg');
                 }
     
-                &:nth-child(7) {
+                &:nth-child(9) {
                     background-image: url('../../resources/gallery/business/business-gallery-banner.jpg');
                 }
             }
@@ -97,11 +161,38 @@ body {
 
                 .card {
                     cursor: pointer;
-                    width: 100%;
                     max-width: 30vw;
+                    width: 100%;
                     height: 40vh;
                     margin: 1em;
                     margin-bottom: 0;
+                    // transition: .5s ease-in-out;
+
+                    &.preview {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        z-index: 10000;
+                        max-width: unset;
+                        width: 100vw;
+                        height: 100vh;
+                        margin: 0;
+                        cursor: default;
+                        background-color: $background-theme;
+                        
+                        img {
+                            object-fit: contain;
+                        }
+
+                        &:hover img {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover img {
+                        opacity: .9;
+                    }
 
                     &.hidden {
                         display: none;
@@ -112,6 +203,7 @@ body {
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
+                        transition: .3s ease-in-out;
                     }
 
                     @media screen and (max-width: 960px) {

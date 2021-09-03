@@ -1,10 +1,33 @@
-function clickedImage() {
-    // function to do something when user clicks an image
+function clickedImage(card) {
+    buttonMoveRight = document.getElementById('button-right');
+    buttonMoveLeft = document.getElementById('button-left');
+
+    buttonMoveLeft.classList.toggle('hidden');
+    buttonMoveRight.classList.toggle('hidden');
+
+    document.body.classList.toggle('gallery-active');
+
+    card.classList.toggle('preview');
+
     console.log('image clicked');
 }
 
+$(document).keyup(function(e) {
+    if (e.key === "Escape" && document.body.classList.contains('gallery-active')) { 
+        buttonMoveLeft.classList.toggle('hidden');
+        buttonMoveRight.classList.toggle('hidden');
+        document.body.classList.remove('gallery-active');
+        var cards = document.querySelectorAll('.card'); 
+        cards.forEach(card => {
+            if(card.classList.contains('preview')) {
+                card.classList.remove('preview');
+                return;
+            }
+        });
+   }
+});
+
 function sameParent(button, card) {
-    // button.parentNode.id
     if(button.parentNode === card.parentNode.parentNode) return true;
     return false;
 }

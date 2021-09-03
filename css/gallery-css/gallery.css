@@ -7,6 +7,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  background-color: #111;
+}
+
+body.gallery-active {
+  overflow: hidden;
 }
 
 body .container {
@@ -28,6 +33,75 @@ body .container {
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   overflow: hidden;
+  background-color: #fff;
+}
+
+body .container #button-right {
+  position: fixed;
+  cursor: pointer;
+  z-index: 10001;
+  top: 50%;
+  right: 20px;
+  border: none;
+  outline: none;
+  padding: 12px;
+  background: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+  border-radius: 50%;
+  opacity: .7;
+  -webkit-box-shadow: 0 0 15px 0 #111;
+          box-shadow: 0 0 15px 0 #111;
+}
+
+body .container #button-right:hover {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+}
+
+body .container #button-right.hidden {
+  right: -300px;
+  opacity: 0;
+}
+
+body .container #button-left {
+  position: fixed;
+  cursor: pointer;
+  z-index: 10001;
+  top: 50%;
+  left: 20px;
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+  opacity: .7;
+  -webkit-box-shadow: 0 0 15px 0 #111;
+          box-shadow: 0 0 15px 0 #111;
+}
+
+body .container #button-left:hover {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+}
+
+body .container #button-left.hidden {
+  left: -300px;
+  opacity: 0;
 }
 
 body .container.active {
@@ -75,19 +149,19 @@ body .container section.parallax .heading h2 {
   text-shadow: 4px 4px #111;
 }
 
-body .container section.parallax:nth-of-type(1) {
+body .container section.parallax:nth-child(3) {
   background-image: url("../../resources/gallery/weddings/wedding-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(3) {
+body .container section.parallax:nth-child(5) {
   background-image: url("../../resources/gallery/events/event-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(5) {
+body .container section.parallax:nth-child(7) {
   background-image: url("../../resources/gallery/portraits/portrait-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(7) {
+body .container section.parallax:nth-child(9) {
   background-image: url("../../resources/gallery/business/business-gallery-banner.jpg");
 }
 
@@ -125,11 +199,38 @@ body .container section.vanilla .cards {
 
 body .container section.vanilla .card {
   cursor: pointer;
-  width: 100%;
   max-width: 30vw;
+  width: 100%;
   height: 40vh;
   margin: 1em;
   margin-bottom: 0;
+}
+
+body .container section.vanilla .card.preview {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  max-width: unset;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  cursor: default;
+  background-color: #fff;
+}
+
+body .container section.vanilla .card.preview img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+body .container section.vanilla .card.preview:hover img {
+  opacity: 1;
+}
+
+body .container section.vanilla .card:hover img {
+  opacity: .9;
 }
 
 body .container section.vanilla .card.hidden {
@@ -143,6 +244,8 @@ body .container section.vanilla .card img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 @media screen and (max-width: 960px) {
