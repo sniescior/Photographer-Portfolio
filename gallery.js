@@ -78,33 +78,21 @@ function clickedImage(thisCard) {
         buttonMoveRight.classList.remove('hidden');
     }
 
-
     showLessButtons.forEach(buttonElement => {
         if(sameParent(buttonElement, thisCard)) {
             console.log(buttonElement.parentNode.id);
 
             if(buttonElement.classList.contains('hide')) {
-                // console.log('most of the %s images are hidden', buttonElement.parentNode.id);
+                // most of the images in parent should be hidden
                 cards.forEach(card => {
                     if(card.classList.contains('shown') && card.parentNode === thisCard.parentNode) {
                         card.classList.remove('shown');
                         card.classList.add('hidden');
                     }
                 })
-            } else {
-                // console.log('most of the %s images are shown', buttonElement.parentNode.id);
-
             }
-
         }
     })
-
-    // cards.forEach(card => {
-    //     if(card.classList.contains('shown')) {
-    //         card.classList.remove('shown');
-    //         card.classList.add('hidden');
-    //     }
-    // })
 
     document.body.classList.toggle('gallery-active');
 }
