@@ -97,7 +97,6 @@ body {
 
         section {
             width: 100vw;
-            transition: .5s ease-in-out;
 
             &:nth-child(3) {
                 margin-top: 80px;
@@ -168,6 +167,14 @@ body {
                     margin: 1em;
                     margin-bottom: 0;
 
+                    &.previous {
+                        left: -100vw;
+                    }
+
+                    &.next {
+                        right: -100vw;
+                    }
+
                     &.preview {
                         position: fixed;
                         top: 0;
@@ -200,7 +207,8 @@ body {
                     }
 
                     &.hidden {
-                        display: none;
+                        height: 0;
+                        width: 0;
                     }
 
                     img {
