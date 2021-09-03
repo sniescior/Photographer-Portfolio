@@ -250,6 +250,7 @@ body .container section.vanilla .card:hover img {
 body .container section.vanilla .card.hidden {
   height: 0;
   width: 0;
+  margin: 0;
 }
 
 body .container section.vanilla .card img {
