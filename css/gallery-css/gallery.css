@@ -204,6 +204,12 @@ body .container section.vanilla .card {
   height: 40vh;
   margin: 1em;
   margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container section.vanilla .card.preview {

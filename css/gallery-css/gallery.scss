@@ -166,7 +166,8 @@ body {
                     height: 40vh;
                     margin: 1em;
                     margin-bottom: 0;
-                    // transition: .5s ease-in-out;
+                    display: flex;
+                    align-items: center;
 
                     &.preview {
                         position: fixed;
