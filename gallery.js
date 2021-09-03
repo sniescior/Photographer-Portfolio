@@ -8,7 +8,7 @@ function activeImage() {
 
     cards.forEach(function(card) {
         if(card.classList.contains('preview')) {
-            activeImageIndex = counter; // active image
+            activeImageIndex = counter; // active image 'index'
         }
         if(activeImageIndex != -1) {
             return;

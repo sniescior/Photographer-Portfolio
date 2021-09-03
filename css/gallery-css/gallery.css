@@ -119,7 +119,7 @@ body .container section:nth-child(3) {
 
 body .container section.parallax {
   width: 100vw;
-  height: 50vh;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
