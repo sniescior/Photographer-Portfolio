@@ -111,9 +111,11 @@ body .container.active {
 
 body .container section {
   width: 100vw;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
-body .container section:nth-child(1) {
+body .container section:nth-child(3) {
   margin-top: 80px;
 }
 
