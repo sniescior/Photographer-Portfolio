@@ -78,19 +78,15 @@ function nextImage() {
             card.classList.remove('previous');
         }
         if(card.classList.contains('preview')) {
-            if(card.classList.contains('shown')) {
-                card.classList.add('hidden');
-                card.classList.remove('shown');
-            }
             card.classList.remove('preview');
             card.classList.add('previous');
         }
         if(card.classList.contains('next')) {
+            card.classList.add('preview');
             if(card.classList.contains('hidden')) {
                 card.classList.remove('hidden');
                 card.classList.add('shown');
             }
-            card.classList.add('preview');
             card.classList.remove('next');
         }
     });
@@ -130,7 +126,15 @@ function clickedImage(thisCard) {
                         card.classList.remove('shown');
                         card.classList.add('hidden');
                     }
-                })
+                });
+            } else {
+                // most of the images in parent should be shown
+                cards.forEach(card => {
+                    if(card.classList.contains('hidden') && card.parentNode === thisCard.parentNode) {
+                        card.classList.remove('hidden');
+                        card.classList.add('shown');
+                    }
+                });
             }
         }
     });
