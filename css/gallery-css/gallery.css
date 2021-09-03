@@ -45,8 +45,10 @@ body .container {
   text-align: center;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background-color: #fff;
+  scroll-behavior: smooth !important;
 }
 
 body .container #button-right {
@@ -259,6 +261,10 @@ body .container section.vanilla .card.hidden {
   height: 0;
   width: 0;
   margin: 0;
+}
+
+body .container section.vanilla .card.hidden h2 {
+  visibility: hidden;
 }
 
 body .container section.vanilla .card img {

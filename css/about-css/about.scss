@@ -50,47 +50,55 @@ body {
             }
         }
 
-        // css for development state form this point
-        p {
-            font-size: 1.5em;
-            margin: 10px 40px 0 40px;
+        // css for development state from this point
 
-            a {
-                font-size: 2em;
-                text-transform: uppercase;
-                text-decoration: none;
-                color: #111;
-                font-weight: 700;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                
+        .dev-p {
 
-                &::after {
-                    content: '';
-                    display: inline-block;
-                    left: 0;
-                    bottom: 0;
-                    width: 33px;
-                    background-color: $hover-color;
-                    height: 4px;
-                    transition: .2s ease-in-out;
-                }
+            h2 {
+                text-align: center;
+            }
 
-                &:hover {
-                    color: $hover-color;
-
+            p {
+                font-size: 1.5em;
+                margin: 10px 40px 0 40px;
+    
+                a {
+                    font-size: 2em;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #111;
+                    font-weight: 700;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    
+    
                     &::after {
-                        width: 0;
+                        content: '';
+                        display: inline-block;
+                        left: 0;
+                        bottom: 0;
+                        width: 33px;
+                        background-color: $hover-color;
+                        height: 4px;
+                        transition: .2s ease-in-out;
+                    }
+    
+                    &:hover {
+                        color: $hover-color;
+    
+                        &::after {
+                            width: 0;
+                        }
                     }
                 }
             }
-        }
-    
-        &.active {
-            transform: translateX(-300px);
+        
+            &.active {
+                transform: translateX(-300px);
+            }
         }
 
         .line {

@@ -54,12 +54,16 @@ body .container .heading .subtitle {
   margin-top: 0;
 }
 
-body .container p {
+body .container .dev-p h2 {
+  text-align: center;
+}
+
+body .container .dev-p p {
   font-size: 1.5em;
   margin: 10px 40px 0 40px;
 }
 
-body .container p a {
+body .container .dev-p p a {
   font-size: 2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -81,7 +85,7 @@ body .container p a {
           justify-content: center;
 }
 
-body .container p a::after {
+body .container .dev-p p a::after {
   content: '';
   display: inline-block;
   left: 0;
@@ -93,15 +97,15 @@ body .container p a::after {
   transition: .2s ease-in-out;
 }
 
-body .container p a:hover {
+body .container .dev-p p a:hover {
   color: #4B6587;
 }
 
-body .container p a:hover::after {
+body .container .dev-p p a:hover::after {
   width: 0;
 }
 
-body .container.active {
+body .container .dev-p.active {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }

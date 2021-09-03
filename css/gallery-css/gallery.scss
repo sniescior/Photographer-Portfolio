@@ -26,9 +26,10 @@ body {
         z-index: -100;
         background-color: $background-theme;
     }
-    
+
     &.gallery-active {
         overflow: hidden;
+
         &::before {
             z-index: 1000;
         }
@@ -42,8 +43,10 @@ body {
         min-height: 100vh;
         text-align: center;
         transition: .4s ease-in-out;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
         background-color: $background-theme;
+        scroll-behavior: smooth !important;
 
         #button-right {
             position: fixed;
@@ -215,6 +218,10 @@ body {
                         height: 0;
                         width: 0;
                         margin: 0;
+
+                        h2 {
+                            visibility: hidden;
+                        }
                     }
 
                     img {
