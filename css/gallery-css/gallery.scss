@@ -17,9 +17,21 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: $button-theme;
+
+    &::before {
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -100;
+        background-color: $background-theme;
+    }
     
     &.gallery-active {
         overflow: hidden;
+        &::before {
+            z-index: 1000;
+        }
     }
 
     .container {
@@ -167,14 +179,6 @@ body {
                     margin: 1em;
                     margin-bottom: 0;
 
-                    &.previous {
-                        left: -100vw;
-                    }
-
-                    &.next {
-                        right: -100vw;
-                    }
-
                     &.preview {
                         position: fixed;
                         top: 0;
@@ -186,7 +190,8 @@ body {
                         height: 100%;
                         margin: 0;
                         cursor: default;
-                        background-color: $background-theme;
+                        animation: animate 2s ease 0s 1 normal none;
+                        transition: 0s;
                         
                         img {
                             position: absolute;
@@ -217,7 +222,15 @@ body {
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
-                        transition: .3s ease-in-out;
+                    }
+
+                    @keyframes animate {
+                        from {
+                            opacity: 0;
+                        } 
+                        to {
+                            opacity: 1;
+                        }
                     }
 
                     @media screen and (max-width: 960px) {
