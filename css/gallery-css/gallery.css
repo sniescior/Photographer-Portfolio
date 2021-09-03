@@ -204,12 +204,6 @@ body .container section.vanilla .card {
   height: 40vh;
   margin: 1em;
   margin-bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 body .container section.vanilla .card.preview {
@@ -227,6 +221,12 @@ body .container section.vanilla .card.preview {
 }
 
 body .container section.vanilla .card.preview img {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  left: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   -o-object-fit: contain;
      object-fit: contain;
 }

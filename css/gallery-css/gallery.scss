@@ -166,8 +166,6 @@ body {
                     height: 40vh;
                     margin: 1em;
                     margin-bottom: 0;
-                    display: flex;
-                    align-items: center;
 
                     &.preview {
                         position: fixed;
@@ -183,6 +181,11 @@ body {
                         background-color: $background-theme;
                         
                         img {
+                            position: absolute;
+                            bottom: 50%;
+                            right: 0;
+                            left: 0;
+                            transform: translateY(50%);
                             object-fit: contain;
                         }
 
