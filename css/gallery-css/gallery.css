@@ -16,7 +16,8 @@ body::before {
   height: 100vh;
   position: fixed;
   z-index: -100;
-  background-color: #fff;
+  background-color: #111;
+  overflow: hidden;
 }
 
 body.gallery-active {
@@ -46,9 +47,7 @@ body .container {
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
   overflow-x: hidden;
-  overflow-y: scroll;
   background-color: #fff;
-  scroll-behavior: smooth !important;
 }
 
 body .container #button-right {
@@ -219,6 +218,83 @@ body .container section.vanilla .card {
   height: 40vh;
   margin: 1em;
   margin-bottom: 0;
+}
+
+body .container section.vanilla .card.intersection {
+  width: 0;
+  height: 0;
+  margin: 0;
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container section.vanilla .card.intersection.preview {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: visible;
+}
+
+body .container section.vanilla .card.intersection.preview .box {
+  width: 45%;
+  min-width: 550px;
+  margin: 0 20px;
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container section.vanilla .card.intersection.preview .box#event-banner {
+  background: url("../../resources/gallery/events/event-gallery-banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body .container section.vanilla .card.intersection.preview .box#wedding-banner {
+  background: url("../../resources/gallery/weddings/wedding-gallery-banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body .container section.vanilla .card.intersection.preview h2 {
+  text-align: center;
+  text-shadow: 4px 4px #111;
+  color: #eee;
+  font-size: 3em;
+  margin: 0;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 body .container section.vanilla .card.preview {

@@ -19,7 +19,7 @@ function activeImage() {
 function previousImage() {
     var previousImageIndex = activeImage() - 1;
     var buttonMoveLeft = document.getElementById('button-left');
-    var buttonMoveRight = document.getElementById('button-right')
+    var buttonMoveRight = document.getElementById('button-right');
     var counter = 0;
 
     buttonMoveRight.classList.remove('hidden');

@@ -24,7 +24,8 @@ body {
         height: 100vh;
         position: fixed;
         z-index: -100;
-        background-color: $background-theme;
+        background-color: $font-color;
+        overflow: hidden;
     }
 
     &.gallery-active {
@@ -44,9 +45,7 @@ body {
         text-align: center;
         transition: .4s ease-in-out;
         overflow-x: hidden;
-        overflow-y: scroll;
         background-color: $background-theme;
-        scroll-behavior: smooth !important;
 
         #button-right {
             position: fixed;
@@ -181,6 +180,60 @@ body {
                     height: 40vh;
                     margin: 1em;
                     margin-bottom: 0;
+
+                    &.intersection {
+                        width: 0;
+                        height: 0;
+                        margin: 0;
+                        visibility: hidden;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        &.preview {
+                            width: 100vw;
+                            height: 100vh;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            visibility: visible;
+
+                            .box {
+                                width: 45%;
+                                min-width: 550px;
+                                margin: 0 20px;
+                                height: 45vh;
+                                background-size: cover;
+                                background-position: center;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+
+                                &#event-banner {
+                                    background: url('../../resources/gallery/events/event-gallery-banner.jpg');
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+
+                                &#wedding-banner {
+                                    background: url('../../resources/gallery/weddings/wedding-gallery-banner.jpg');
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                            }
+    
+                            h2 {
+                                text-align: center;
+                                text-shadow: 4px 4px $font-color;
+                                color: $contrast-font-color;
+                                font-size: 3em;
+                                margin: 0;
+                                transition: .4s ease-in-out;
+                            }
+                        }
+                    }
 
                     &.preview {
                         position: fixed;

@@ -83,14 +83,18 @@
                 <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/weddings/wedding15.jpg" alt="">
                 </div>
-                <!-- <div class="card hidden intersection">
-                    <div class="box">
-                        <img src="https://source.unsplash.com/random?people" alt="">
-                        <h2>Lorem ipsum dolor sit.</h2>
+                <!-- <div class="card intersection">
+                    <div class="box" id="wedding-banner" onclick="previousImage();">
+                        <h2>Weddings</h2>
+                        <button class="next-section-button">
+                            <i class="icon-left-big"></i>
+                        </button>
                     </div>
-                    <div class="box">
-                        <img src="https://source.unsplash.com/random?sunset" alt="">
-                        <h2>Lorem ipsum dolor sit.</h2>
+                    <div class="box" id="event-banner">
+                        <h2>Events</h2>
+                        <button class="next-section-button" onclick="nextImage();">
+                            <i class="icon-right-big"></i>
+                        </button>
                     </div>
                 </div> -->
             </div>
@@ -128,6 +132,9 @@
                 <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/events/box11.jpg" alt="">    
                 </div>
+                <div class="card hidden intersection">
+                    <h2 class="intersection-text">Events</h2>
+                </div>
             </div>
             <h2 class="show-more-button" onclick="showMore(this);">LOAD MORE EVENT PHOTOS</h2>
             <h2 class="show-less-button hide" onclick="showLess(this);">SEE LESS</h2>
@@ -162,6 +169,9 @@
                 </div>
                 <div class="card hidden" onclick="clickedImage(this);">
                     <img src="../resources/gallery/portraits/portrait8.jpg" alt="">    
+                </div>
+                <div class="card hidden intersection">
+                    <h2 class="intersection-text">Portraits</h2>
                 </div>
             </div>
             <h2 class="show-more-button" onclick="showMore(this);">LOAD MORE PORTRAITS</h2>
@@ -243,6 +253,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="../main.js"></script>
-    <script src="../gallery.js"></script>
+    <!-- <script src="../gallery.js"></script> -->
+    <script src="../gallery-updated.js"></script>
 </body>
 </html>
