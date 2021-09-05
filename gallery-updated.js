@@ -77,6 +77,10 @@ function toggleButtons() {
 function clickedImage(image) {
     image.classList.toggle('preview');
 
+    var title = document.getElementById('section-title-banner');
+    title.innerHTML = '';
+    title.classList.remove('active');
+
     // hide the images if necessary
     if(!imagesState(image) && document.body.classList.contains('gallery-active')) {
         cards.forEach(card => {
@@ -152,7 +156,17 @@ function nextImage() {
             // if section is about to change
             if(cards[i+1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
                 // section changed
-                console.log('Section changed -> ' + cards[i+1].parentNode.parentNode.id);
+                // section id ( title ) --> var text
+                var text = cards[i+1].parentNode.parentNode.id;
+                
+                var title = document.getElementById('section-title-banner');
+                title.classList.add('active');
+                title.innerHTML = text;
+            } else {
+                // section hasn's changed
+                var title = document.getElementById('section-title-banner');
+                title.classList.remove('active');
+                title.innerHTML = '';
             }
 
             cards[++i].classList.add('preview');
@@ -178,7 +192,17 @@ function previousImage() {
             // if section is about to change
             if(cards[i-1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
                 // section changed
-                console.log('Section changed -> ' + cards[i-1].parentNode.parentNode.id);
+                // section id ( title ) --> var text
+                var text = cards[i-1].parentNode.parentNode.id;
+
+                var title = document.getElementById('section-title-banner');
+                title.classList.add('active');
+                title.innerHTML = text;
+            } else {
+                // section hasn's changed
+                var title = document.getElementById('section-title-banner');
+                title.classList.remove('active');
+                title.innerHTML = '';
             }
 
             cards[--i].classList.add('preview');

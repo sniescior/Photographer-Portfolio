@@ -47,6 +47,25 @@ body {
         overflow-x: hidden;
         background-color: $background-theme;
 
+        // #section-title-banner indicates which section is in preview
+
+        #section-title-banner {
+            position: fixed;
+            top: 50%;
+            right: 50%;
+            color: $contrast-font-color;
+            transform: translate(50%, -50%);
+            background-color: $button-theme;
+            padding: 0;
+            user-select: none;
+            
+            &.active {
+                z-index: 100000;
+                padding: 12px;
+            }
+
+        }
+
         #button-right {
             position: fixed;
             cursor: pointer;
@@ -112,7 +131,7 @@ body {
         section {
             width: 100vw;
 
-            &:nth-child(3) {
+            &:nth-of-type(1) {
                 margin-top: 80px;
             }
 
@@ -141,19 +160,19 @@ body {
                     }
                 }
     
-                &:nth-child(3) {
+                &:nth-of-type(1) {
                     background-image: url('../../resources/gallery/weddings/wedding-gallery-banner.jpg');
                 }
     
-                &:nth-child(5) {
+                &:nth-of-type(3) {
                     background-image: url('../../resources/gallery/events/event-gallery-banner.jpg');
                 }
     
-                &:nth-child(7) {
+                &:nth-of-type(5) {
                     background-image: url('../../resources/gallery/portraits/portrait-gallery-banner.jpg');
                 }
     
-                &:nth-child(9) {
+                &:nth-of-type(7) {
                     background-image: url('../../resources/gallery/business/business-gallery-banner.jpg');
                 }
             }

@@ -50,6 +50,26 @@ body .container {
   background-color: #fff;
 }
 
+body .container #section-title-banner {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  color: #eee;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  background-color: #111;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body .container #section-title-banner.active {
+  z-index: 100000;
+  padding: 12px;
+}
+
 body .container #button-right {
   position: fixed;
   cursor: pointer;
@@ -127,7 +147,7 @@ body .container section {
   width: 100vw;
 }
 
-body .container section:nth-child(3) {
+body .container section:nth-of-type(1) {
   margin-top: 80px;
 }
 
@@ -163,19 +183,19 @@ body .container section.parallax .heading h2 {
   text-shadow: 4px 4px #111;
 }
 
-body .container section.parallax:nth-child(3) {
+body .container section.parallax:nth-of-type(1) {
   background-image: url("../../resources/gallery/weddings/wedding-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(5) {
+body .container section.parallax:nth-of-type(3) {
   background-image: url("../../resources/gallery/events/event-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(7) {
+body .container section.parallax:nth-of-type(5) {
   background-image: url("../../resources/gallery/portraits/portrait-gallery-banner.jpg");
 }
 
-body .container section.parallax:nth-child(9) {
+body .container section.parallax:nth-of-type(7) {
   background-image: url("../../resources/gallery/business/business-gallery-banner.jpg");
 }
 
