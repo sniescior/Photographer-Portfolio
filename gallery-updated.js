@@ -27,14 +27,12 @@ function imagesState(cardToCheck) {
     var state;
 
     showLessButtons.forEach(buttonElement => {
-        if(buttonElement.parentNode === cardToCheck.parentNode.parentNode) {
-            if(buttonElement.classList.contains('hide')) {
-                // most of the images in section ( parent ) should be hidden
-                state = false;
-            } else {
-                // most of the images in section ( parent ) should be shown
-                state = true; 
-            }
+        if(buttonElement.classList.contains('hide')) {
+            // most of the images in section ( parent ) should be hidden
+            state = false;
+        } else {
+            // most of the images in section ( parent ) should be shown
+            state = true; 
         }
     });
 
@@ -82,8 +80,7 @@ function clickedImage(image) {
     // hide the images if necessary
     if(!imagesState(image) && document.body.classList.contains('gallery-active')) {
         cards.forEach(card => {
-            console.log()
-            if(card.classList.contains('shown') && card.parentNode === image.parentNode) {
+            if(card.classList.contains('shown')) {
                 card.classList.remove('shown');
                 card.classList.add('hidden');
             }
@@ -151,11 +148,17 @@ function nextImage() {
                     cards[i+1].classList.add('shown');
                 }
             }
+
+            // if section is about to change
+            if(cards[i+1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
+                // section changed
+                console.log('Section changed -> ' + cards[i+1].parentNode.parentNode.id);
+            }
+
             cards[++i].classList.add('preview');
             break;
         }
     }
-
     toggleButtons();
 }
 
@@ -171,10 +174,16 @@ function previousImage() {
                     cards[i-1].classList.add('shown');
                 }
             }
+
+            // if section is about to change
+            if(cards[i-1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
+                // section changed
+                console.log('Section changed -> ' + cards[i-1].parentNode.parentNode.id);
+            }
+
             cards[--i].classList.add('preview');
             break;
         }
     }
-
     toggleButtons();
 }
