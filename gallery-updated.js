@@ -160,8 +160,12 @@ function nextImage() {
                 var text = cards[i+1].parentNode.parentNode.id;
                 
                 var title = document.getElementById('section-title-banner');
-                title.classList.add('active');
+
                 title.innerHTML = text;
+                $('#section-title-banner').addClass('active').delay(2000).queue(function() {
+                    $(this).removeClass('active');
+                    $(this).dequeue();
+                });
             } else {
                 // section hasn's changed
                 var title = document.getElementById('section-title-banner');
@@ -196,8 +200,14 @@ function previousImage() {
                 var text = cards[i-1].parentNode.parentNode.id;
 
                 var title = document.getElementById('section-title-banner');
-                title.classList.add('active');
+
+                // show and hide the text after 2s
+
                 title.innerHTML = text;
+                $('#section-title-banner').addClass('active').delay(2000).queue(function() {
+                    $(this).removeClass('active');
+                    $(this).dequeue();
+                });
             } else {
                 // section hasn's changed
                 var title = document.getElementById('section-title-banner');

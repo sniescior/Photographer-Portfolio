@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
 html {
   height: 100%;
 }
@@ -52,22 +53,42 @@ body .container {
 
 body .container #section-title-banner {
   position: fixed;
-  top: 50%;
-  right: 50%;
+  top: 0;
   color: #eee;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
-  background-color: #111;
   padding: 0;
+  z-index: -10;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  padding: 12px;
+  opacity: 0;
+  font-size: 8em;
+  text-shadow: 4px 4px #111;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Allison', cursive;
 }
 
 body .container #section-title-banner.active {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
   z-index: 100000;
-  padding: 12px;
+  -webkit-transition: .7s ease-in-out;
+  transition: .7s ease-in-out;
 }
 
 body .container #button-right {
@@ -238,83 +259,6 @@ body .container section.vanilla .card {
   height: 40vh;
   margin: 1em;
   margin-bottom: 0;
-}
-
-body .container section.vanilla .card.intersection {
-  width: 0;
-  height: 0;
-  margin: 0;
-  visibility: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .container section.vanilla .card.intersection.preview {
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  visibility: visible;
-}
-
-body .container section.vanilla .card.intersection.preview .box {
-  width: 45%;
-  min-width: 550px;
-  margin: 0 20px;
-  height: 45vh;
-  background-size: cover;
-  background-position: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-body .container section.vanilla .card.intersection.preview .box#event-banner {
-  background: url("../../resources/gallery/events/event-gallery-banner.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-body .container section.vanilla .card.intersection.preview .box#wedding-banner {
-  background: url("../../resources/gallery/weddings/wedding-gallery-banner.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-body .container section.vanilla .card.intersection.preview h2 {
-  text-align: center;
-  text-shadow: 4px 4px #111;
-  color: #eee;
-  font-size: 3em;
-  margin: 0;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
 }
 
 body .container section.vanilla .card.preview {
