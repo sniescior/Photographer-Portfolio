@@ -110,6 +110,11 @@
           justify-content: space-between;
 }
 
+.main-header.scrolled-down {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 .main-header.bg-white {
   background-color: #fff;
 }

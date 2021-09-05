@@ -95,6 +95,10 @@ $hover-color: #4B6587;
     display: flex;
     justify-content: space-between;
 
+    &.scrolled-down {
+        transform: translateY(-100%);
+    }
+
     &.bg-white {
         background-color: $menu-theme;
     }

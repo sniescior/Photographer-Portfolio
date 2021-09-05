@@ -201,8 +201,6 @@ function previousImage() {
 
                 var title = document.getElementById('section-title-banner');
 
-                // show and hide the text after 2s
-
                 title.innerHTML = text;
                 $('#section-title-banner').addClass('active').delay(2000).queue(function() {
                     $(this).removeClass('active');
