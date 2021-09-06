@@ -26,13 +26,18 @@ function imagesState(cardToCheck) {
     var showLessButtons = document.querySelectorAll('.show-less-button');
     var state;
 
+    cardParent = cardToCheck.parentNode.parentNode;
+
     showLessButtons.forEach(buttonElement => {
-        if(buttonElement.classList.contains('hide')) {
-            // most of the images in section ( parent ) should be hidden
-            state = false;
-        } else {
-            // most of the images in section ( parent ) should be shown
-            state = true; 
+        // compare parents
+        if(buttonElement.parentNode === cardParent) {
+            if(buttonElement.classList.contains('hide')) {
+                // most of the images in section ( parent ) should be hidden
+                state = false;
+            } else {
+                // most of the images in section ( parent ) should be shown
+                state = true; 
+            }
         }
     });
 
@@ -90,7 +95,6 @@ function clickedImage(image) {
             }
         });
     }
-
     document.body.classList.toggle('gallery-active');
 
     toggleButtons();
@@ -160,6 +164,12 @@ function nextImage() {
                 var text = cards[i+1].parentNode.parentNode.id;
                 
                 var title = document.getElementById('section-title-banner');
+
+                var buttonMoveLeft = document.getElementById('button-left');
+                var buttonMoveRight = document.getElementById('button-right');
+
+                buttonMoveLeft.classList.add('hidden');
+                buttonMoveRight.classList.add('hidden');
 
                 title.innerHTML = text;
                 $('#section-title-banner').addClass('active').delay(2000).queue(function() {
