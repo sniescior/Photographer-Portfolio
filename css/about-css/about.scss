@@ -31,11 +31,16 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap-reverse;
+            // flex-wrap: wrap-reverse;
 
             img {
                 max-width: 600px;
                 padding: 20px;
+            }
+
+            @media screen and (max-width: 1139px) {
+                flex-direction: column-reverse;
+                margin-top: 90px;
             }
 
             .contentText {
