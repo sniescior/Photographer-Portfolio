@@ -87,9 +87,9 @@ function clickedImage(image) {
     title.classList.remove('active');
 
     // hide the images if necessary
-    if(!imagesState(image) && document.body.classList.contains('gallery-active')) {
+    if(document.body.classList.contains('gallery-active')) {
         cards.forEach(card => {
-            if(card.classList.contains('shown')) {
+            if(card.classList.contains('shown') && !imagesState(card)) {
                 card.classList.remove('shown');
                 card.classList.add('hidden');
             }
