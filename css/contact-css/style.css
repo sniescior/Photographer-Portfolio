@@ -182,6 +182,7 @@ body .container .social-media-section .facebook-link::before {
   position: absolute;
   content: '';
   bottom: 3px;
+  left: 0;
   width: 0;
   height: 0;
   background: #1877f2;
@@ -206,6 +207,7 @@ body .container .social-media-section .instagram-link::before {
   content: '';
   position: absolute;
   bottom: 3px;
+  left: 0;
   width: 0;
   height: 0;
   background: #dd2a7b;
