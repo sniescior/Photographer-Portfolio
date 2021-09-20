@@ -178,47 +178,22 @@ body .container .social-media-section .facebook-link {
   color: #1877f2;
 }
 
-body .container .social-media-section .facebook-link::before {
-  position: absolute;
-  content: '';
-  bottom: 3px;
-  left: 0;
-  width: 0;
-  height: 0;
-  background: #1877f2;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-}
-
-body .container .social-media-section .facebook-link:hover::before {
-  width: 40px;
-  height: 3px;
-  bottom: 0;
+body .container .social-media-section .facebook-link:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #1877f2;
+          text-decoration-color: #1877f2;
 }
 
 body .container .social-media-section .instagram-link {
   background: -webkit-linear-gradient(#feda77, #dd2a7b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
 }
 
-body .container .social-media-section .instagram-link::before {
-  content: '';
-  position: absolute;
-  bottom: 3px;
-  left: 0;
-  width: 0;
-  height: 0;
-  background: #dd2a7b;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-}
-
-body .container .social-media-section .instagram-link:hover::before {
-  width: 40px;
-  height: 3px;
-  bottom: 0;
+body .container .social-media-section .instagram-link:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #dd2a7b;
+          text-decoration-color: #dd2a7b;
 }
 
 body .container .social-media-section .bannerImg {

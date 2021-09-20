@@ -146,23 +146,9 @@ body {
                 position: relative;
                 color: #1877f2;
 
-                &::before {
-                    position: absolute;
-                    content: '';
-                    bottom: 3px;
-                    left: 0;
-                    width: 0;
-                    height: 0;
-                    background: #1877f2;
-                    transition: .3s ease-in-out;
-                }
-
                 &:hover {
-                    &::before {
-                        width: 40px;
-                        height: 3px;
-                        bottom: 0;
-                    }
+                    text-decoration: underline;
+                    text-decoration-color: #1877f2;
                 }
             }
 
@@ -170,25 +156,10 @@ body {
                 background: -webkit-linear-gradient(#feda77, #dd2a7b);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                position: relative;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    bottom: 3px;
-                    left: 0;
-                    width: 0;
-                    height: 0;
-                    background: #dd2a7b;
-                    transition: .3s ease-in-out;
-                }
 
                 &:hover {
-                    &::before {
-                        width: 40px;
-                        height: 3px;
-                        bottom: 0;
-                    }
+                    text-decoration: underline;
+                    text-decoration-color: #dd2a7b;
                 }
             }
 
