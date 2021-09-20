@@ -20,16 +20,17 @@ body {
         width: 100vw;
         text-align: center;
         transition: .4s ease-in-out;
+        overflow: hidden;
 
         .contact-box {
             max-width: 850px;
-            margin: 90px 40px;
+            margin: 90px 40px 0 40px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: #eee;
+            background: $background-theme;
             box-shadow: 0px 0px 19px 5px rgba(0,0,0,.15);
             overflow: hidden;
 
@@ -123,6 +124,101 @@ body {
         
                 .left {
                     height: 200px;
+                }
+            }
+        }
+
+        .social-media-section {
+            width: 100%;
+            height: fit-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+
+            a {
+                text-decoration: none;
+            }
+
+            .facebook-link {
+                position: relative;
+                color: #1877f2;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    background: #1877f2;
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover {
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        width: 40px;
+                        height: 3px;
+                        background: #1877f2;
+                        transition: .3s ease-in-out;
+                    }
+                }
+            }
+
+            .instagram-link {
+                background: -webkit-linear-gradient(#feda77, #dd2a7b);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    background: #dd2a7b;
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover {
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        width: 40px;
+                        height: 3px;
+                        background: #dd2a7b;
+                        transition: .3s ease-in-out;
+                    }
+                }
+            }
+
+            .bannerImg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                filter: opacity(.9);
+        
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .heading {
+                z-index: 1;
+                padding: 40px;
+                color: $contrast-font-color;
+
+                .title {
+                    font-size: 2em;
                 }
             }
         }

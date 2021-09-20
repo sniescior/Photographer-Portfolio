@@ -25,11 +25,12 @@ body .container {
   text-align: center;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+  overflow: hidden;
 }
 
 body .container .contact-box {
   max-width: 850px;
-  margin: 90px 40px;
+  margin: 90px 40px 0 40px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -41,7 +42,7 @@ body .container .contact-box {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background: #eee;
+  background: #fff;
   -webkit-box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -144,6 +145,115 @@ body .container .contact-box .right #text {
   body .container .contact-box .left {
     height: 200px;
   }
+}
+
+body .container .social-media-section {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px 0;
+}
+
+body .container .social-media-section a {
+  text-decoration: none;
+}
+
+body .container .social-media-section .facebook-link {
+  position: relative;
+  color: #1877f2;
+}
+
+body .container .social-media-section .facebook-link::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  background: #1877f2;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container .social-media-section .facebook-link:hover::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1877f2;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container .social-media-section .instagram-link {
+  background: -webkit-linear-gradient(#feda77, #dd2a7b);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+body .container .social-media-section .instagram-link::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  background: #dd2a7b;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container .social-media-section .instagram-link:hover::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #dd2a7b;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+body .container .social-media-section .bannerImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: opacity(0.9);
+          filter: opacity(0.9);
+}
+
+body .container .social-media-section .bannerImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+body .container .social-media-section .heading {
+  z-index: 1;
+  padding: 40px;
+  color: #fff;
+}
+
+body .container .social-media-section .heading .title {
+  font-size: 2em;
 }
 
 body .container.active {

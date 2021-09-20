@@ -47,19 +47,8 @@ function toggleMenu() {
     var aToggle = document.querySelector('.a-toggle');
 
     aToggle.classList.toggle('visible');
-
-    if($('.image-cards').length > 0) { // check if .image-cards exists in the doument
-        if(scene.state() != 'DURING') {
-            container.classList.toggle('active');
-            nav.classList.toggle('active');
-        }
-        if(scene.state() == 'DURING') {
-            toggle.classList.toggle('active');
-        }
-    } else {
-        container.classList.toggle('active');
-        nav.classList.toggle('active');
-    }
+    container.classList.toggle('active');
+    nav.classList.toggle('active');
 
     // toggle menu and move the whole container
     menuToggle.classList.toggle('toggled');

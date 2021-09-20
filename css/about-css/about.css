@@ -21,8 +21,7 @@ body .container.active {
 }
 
 body .container .content {
-  min-height: 80vh;
-  margin-top: 80px;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
