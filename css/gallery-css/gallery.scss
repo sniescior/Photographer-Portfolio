@@ -82,61 +82,50 @@ body {
             }
         }
 
-        #button-right {
+        .gallery-swipe-button {
             position: fixed;
             cursor: pointer;
             z-index: 10001;
             top: 50%;
-            right: 20px;
             border: none;
             outline: none;
+            height: 100%;
             padding: 12px;
-            background: $background-theme;
+            font-size: 1.8em;
+            background: transparent;
             transform: translateY(-50%);
             margin: 0;
+            color: $contrast-font-color;
             transition: .5s ease-in-out;
-            transition-delay: .3s;
-            border-radius: 50%;
             opacity: .7;
-            box-shadow: 0 0 15px 0 $font-color;
 
-            &:hover {
-                transition-delay: 0s;
-                opacity: 1;
+            &#button-right {
+                right: 0;
+    
+                &:hover {
+                    opacity: 1;
+                    padding-right: 24px;
+                    transition: .3s ease-in-out;
+                }
+    
+                &.hidden {
+                    right: -300px;
+                    opacity: 0;
+                }
             }
 
-            &.hidden {
-                right: -300px;
-                opacity: 0;
-            }
-        }
-
-        #button-left {
-            position: fixed;
-            cursor: pointer;
-            z-index: 10001;
-            top: 50%;
-            left: 20px;
-            border: none;
-            outline: none;
-            padding: 12px;
-            border-radius: 50%;
-            background: $background-theme;
-            transform: translateY(-50%);
-            margin: 0;
-            transition: .5s ease-in-out;
-            transition-delay: .3s;
-            opacity: .7;
-            box-shadow: 0 0 15px 0 $font-color;
-
-            &:hover {
-                transition-delay: 0s;
-                opacity: 1;
-            }
-
-            &.hidden {
-                left: -300px;
-                opacity: 0;
+            &#button-left {
+                left: 0;
+    
+                &:hover {
+                    opacity: 1;
+                    padding-left: 24px;
+                }
+    
+                &.hidden {
+                    left: -300px;
+                    opacity: 0;
+                }
             }
         }
 
@@ -237,6 +226,7 @@ body {
                             left: 0;
                             transform: translateY(50%);
                             object-fit: contain;
+                            transition: .3s ease-in-out;
                         }
 
                         &:hover img {

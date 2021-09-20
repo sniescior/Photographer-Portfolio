@@ -95,70 +95,52 @@ body .container #section-title-banner.active {
   transition: .5s ease-in-out;
 }
 
-body .container #button-right {
+body .container .gallery-swipe-button {
   position: fixed;
   cursor: pointer;
   z-index: 10001;
   top: 50%;
-  right: 20px;
   border: none;
   outline: none;
+  height: 100%;
   padding: 12px;
-  background: #fff;
+  font-size: 1.8em;
+  background: transparent;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin: 0;
+  color: #eee;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
-  border-radius: 50%;
   opacity: .7;
-  -webkit-box-shadow: 0 0 15px 0 #111;
-          box-shadow: 0 0 15px 0 #111;
 }
 
-body .container #button-right:hover {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+body .container .gallery-swipe-button#button-right {
+  right: 0;
+}
+
+body .container .gallery-swipe-button#button-right:hover {
   opacity: 1;
+  padding-right: 24px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
-body .container #button-right.hidden {
+body .container .gallery-swipe-button#button-right.hidden {
   right: -300px;
   opacity: 0;
 }
 
-body .container #button-left {
-  position: fixed;
-  cursor: pointer;
-  z-index: 10001;
-  top: 50%;
-  left: 20px;
-  border: none;
-  outline: none;
-  padding: 12px;
-  border-radius: 50%;
-  background: #fff;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin: 0;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
-  opacity: .7;
-  -webkit-box-shadow: 0 0 15px 0 #111;
-          box-shadow: 0 0 15px 0 #111;
+body .container .gallery-swipe-button#button-left {
+  left: 0;
 }
 
-body .container #button-left:hover {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+body .container .gallery-swipe-button#button-left:hover {
   opacity: 1;
+  padding-left: 24px;
 }
 
-body .container #button-left.hidden {
+body .container .gallery-swipe-button#button-left.hidden {
   left: -300px;
   opacity: 0;
 }
@@ -291,6 +273,8 @@ body .container section.vanilla .card.preview img {
           transform: translateY(50%);
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 body .container section.vanilla .card.preview:hover img {
