@@ -181,7 +181,7 @@ body .container .social-media-section .facebook-link {
 body .container .social-media-section .facebook-link::before {
   position: absolute;
   content: '';
-  display: block;
+  bottom: 3px;
   width: 0;
   height: 0;
   background: #1877f2;
@@ -190,27 +190,22 @@ body .container .social-media-section .facebook-link::before {
 }
 
 body .container .social-media-section .facebook-link:hover::before {
-  position: absolute;
-  content: '';
-  display: block;
   width: 40px;
   height: 3px;
-  background: #1877f2;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  bottom: 0;
 }
 
 body .container .social-media-section .instagram-link {
   background: -webkit-linear-gradient(#feda77, #dd2a7b);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
 }
 
 body .container .social-media-section .instagram-link::before {
-  position: absolute;
   content: '';
-  display: block;
+  position: absolute;
+  bottom: 3px;
   width: 0;
   height: 0;
   background: #dd2a7b;
@@ -219,14 +214,9 @@ body .container .social-media-section .instagram-link::before {
 }
 
 body .container .social-media-section .instagram-link:hover::before {
-  position: absolute;
-  content: '';
-  display: block;
   width: 40px;
   height: 3px;
-  background: #dd2a7b;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  bottom: 0;
 }
 
 body .container .social-media-section .bannerImg {

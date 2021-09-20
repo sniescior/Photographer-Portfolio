@@ -149,7 +149,7 @@ body {
                 &::before {
                     position: absolute;
                     content: '';
-                    display: block;
+                    bottom: 3px;
                     width: 0;
                     height: 0;
                     background: #1877f2;
@@ -158,27 +158,23 @@ body {
 
                 &:hover {
                     &::before {
-                        position: absolute;
-                        content: '';
-                        display: block;
                         width: 40px;
                         height: 3px;
-                        background: #1877f2;
-                        transition: .3s ease-in-out;
+                        bottom: 0;
                     }
                 }
             }
 
             .instagram-link {
                 background: -webkit-linear-gradient(#feda77, #dd2a7b);
-                background-clip: text;
+                -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 position: relative;
 
                 &::before {
-                    position: absolute;
                     content: '';
-                    display: block;
+                    position: absolute;
+                    bottom: 3px;
                     width: 0;
                     height: 0;
                     background: #dd2a7b;
@@ -187,13 +183,9 @@ body {
 
                 &:hover {
                     &::before {
-                        position: absolute;
-                        content: '';
-                        display: block;
                         width: 40px;
                         height: 3px;
-                        background: #dd2a7b;
-                        transition: .3s ease-in-out;
+                        bottom: 0;
                     }
                 }
             }
