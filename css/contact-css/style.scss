@@ -22,7 +22,7 @@ body {
         transition: .4s ease-in-out;
         overflow: hidden;
 
-        .contact-box {
+            .contact-box {
             max-width: 850px;
             margin: 90px 40px 0 40px;
             display: grid;
@@ -95,6 +95,7 @@ body {
                         min-height: 150px;
                     }
                 }
+                
                 .btn {
                     padding: .5em 3em;
                     font-size: 1.1em;
