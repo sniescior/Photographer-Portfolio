@@ -1,174 +1,112 @@
-var cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card');
 
-function activeImage() {
-    var counter = 0;
-    var activeImageIndex = -1;
-
-    cards.forEach(function(card) {
-        if(card.classList.contains('preview')) {
-            activeImageIndex = counter; // active image 'index'
-        }
-        if(activeImageIndex != -1) {
-            return;
-        }
-        counter++;
-    })
-    return activeImageIndex;
+function getFirstImage() {
+    return cards[0];
 }
 
-function previousImage() {
-    var previousImageIndex = activeImage() - 1;
-    var buttonMoveLeft = document.getElementById('button-left');
-    var buttonMoveRight = document.getElementById('button-right');
-    var counter = 0;
-
-    buttonMoveRight.classList.remove('hidden');
-
-    if(previousImageIndex == 0) {
-        buttonMoveLeft.classList.add('hidden');
-    }
-
-    cards.forEach(card => {
-        if(counter == previousImageIndex) {
-            card.classList.add('previous');
-        }
-        counter++;
-    });
-
-    cards.forEach(card => {
-        if(card.classList.contains('next')) {
-            card.classList.remove('next');
-        }
-        if(card.classList.contains('preview')) {
-            card.classList.add('next');
-            card.classList.remove('preview');
-        }
-        if(card.classList.contains('previous')) {
-            card.classList.add('preview');
-            if(card.classList.contains('hidden')) {
-                card.classList.add('shown');
-                card.classList.remove('hidden');
-            }
-            card.classList.remove('previous');
-        }
-    });
+function getLastImage() {
+    return cards[cards.length - 1];
 }
 
-function nextImage() {
-    var nextImageIndex = activeImage() + 1;
-    var buttonMoveLeft = document.getElementById('button-left')
-    var buttonMoveRight = document.getElementById('button-right')
-    var counter = 0;
-
-    buttonMoveLeft.classList.remove('hidden');
-
-    if(nextImageIndex == cards.length - 1) {
-        buttonMoveRight.classList.add('hidden');
-    }
+function getCurrentImage() {
+    var currentImage;
 
     cards.forEach(card => {
-        if(counter == nextImageIndex) {
-            card.classList.add('next');
-        }
-        counter++;
+        if(card.classList.contains('preview')) currentImage = card;
     });
 
-    cards.forEach(card => {
-        if(card.classList.contains('previous') && !card.classList.contains('preview')) {
-            card.classList.remove('previous');
-        }
-        if(card.classList.contains('preview')) {
-            card.classList.remove('preview');
-            card.classList.add('previous');
-        }
-        if(card.classList.contains('next')) {
-            card.classList.add('preview');
-            if(card.classList.contains('hidden')) {
-                card.classList.remove('hidden');
-                card.classList.add('shown');
-            }
-            card.classList.remove('next');
-        }
-    });
+    return currentImage;
 }
 
-function clickedImage(thisCard) {
-
-    cards.forEach(card => {
-        card.classList.remove('next');
-        card.classList.remove('previous');
-    });
+// returns true when a section is extended ( more images are shown )
+// returns false when in section shown should be only three ( 3 ) first images
+// as an argument the function takes one card which needs to be checked
+function imagesState(cardToCheck) {
 
     var showLessButtons = document.querySelectorAll('.show-less-button');
+    var state;
 
-    buttonMoveRight = document.getElementById('button-right');
-    buttonMoveLeft = document.getElementById('button-left');
-
-    thisCard.classList.toggle('preview');
-
-    if(activeImage() > 0) {
-        buttonMoveLeft.classList.remove('hidden');
-    }
-    if(activeImage() == -1) {
-        buttonMoveLeft.classList.add('hidden');
-        buttonMoveRight.classList.add('hidden');
-    }
-    if(activeImage() < cards.length-1 && activeImage() != -1) {
-        buttonMoveRight.classList.remove('hidden');
-    }
+    cardParent = cardToCheck.parentNode.parentNode;
 
     showLessButtons.forEach(buttonElement => {
-        if(sameParent(buttonElement, thisCard)) {
+        // compare parents
+        if(buttonElement.parentNode === cardParent) {
             if(buttonElement.classList.contains('hide')) {
-                // most of the images in parent should be hidden
-                cards.forEach(card => {
-                    if(card.classList.contains('shown') && card.parentNode === thisCard.parentNode) {
-                        card.classList.remove('shown');
-                        card.classList.add('hidden');
-                    }
-                });
+                // most of the images in section ( parent ) should be hidden
+                state = false;
             } else {
-                // most of the images in parent should be shown
-                cards.forEach(card => {
-                    if(card.classList.contains('hidden') && card.parentNode === thisCard.parentNode) {
-                        card.classList.remove('hidden');
-                        card.classList.add('shown');
-                    }
-                });
+                // most of the images in section ( parent ) should be shown
+                state = true; 
             }
         }
     });
 
-    document.body.classList.toggle('gallery-active');
+    return state;
 }
 
-$(document).keyup(function(e) {
-    if (e.key === "Escape" && document.body.classList.contains('gallery-active')) { 
-        buttonMoveLeft.classList.add('hidden');
-        buttonMoveRight.classList.add('hidden');
-        document.body.classList.remove('gallery-active');
+function getNextImage() {
+    for(var i = 0; i < cards.length; i++) if(cards[i] === getCurrentImage()) return cards[++i];
+}
+
+function getPreviousImage() {
+    for(var i = 0; i < cards.length; i++) if(cards[i] === getCurrentImage()) return cards[--i];
+}
+
+// all logic related to buttons controlling gallery slider
+function toggleButtons() {
+    var buttonMoveLeft = document.getElementById('button-left');
+    var buttonMoveRight = document.getElementById('button-right');
+
+    buttonMoveLeft.classList.add('hidden');
+    buttonMoveRight.classList.add('hidden');
+
+    if(document.body.classList.contains('gallery-active')) {
+        // button move left
+        if(getFirstImage() === getCurrentImage()) {
+            // if the first image is currently in preview mode
+            buttonMoveLeft.classList.add('hidden');
+        } else {
+            buttonMoveLeft.classList.remove('hidden');
+        }
+
+        // button move right 
+        if(getLastImage() === getCurrentImage()) {
+            // if the last image is currently in preview mode
+            buttonMoveRight.classList.add('hidden');
+        } else {
+            buttonMoveRight.classList.remove('hidden');
+        }
+    }
+}
+
+function clickedImage(image) {
+    image.classList.toggle('preview');
+
+    var title = document.getElementById('section-title-banner');
+    title.innerHTML = '';
+    title.classList.remove('active');
+
+    // hide the images if necessary
+    if(document.body.classList.contains('gallery-active')) {
         cards.forEach(card => {
-            if(card.classList.contains('preview')) {
-                activeImage();
-                card.classList.remove('preview');
-                return;
+            if(card.classList.contains('shown') && !imagesState(card)) {
+                card.classList.remove('shown');
+                card.classList.add('hidden');
             }
         });
-   }
-});
+    }
+    document.body.classList.toggle('gallery-active');
 
-function sameParent(button, card) {
-    if(button.parentNode === card.parentNode.parentNode) return true;
-    return false;
+    toggleButtons();
 }
 
 function showMore(button) {
-
     var showLessButtons = document.querySelectorAll('.show-less-button');
     var counter = 0;
 
+    // remove hidden class from all the cards in section ( parent ) starting from 3nd one ( 2nd index )
     cards.forEach(card => {
-        if(sameParent(button, card)) {
+        if(card.parentNode.parentNode === button.parentNode) {
             card.classList.remove('hidden');
             if(counter > 2) card.classList.add('shown');
             counter++;
@@ -177,6 +115,7 @@ function showMore(button) {
 
     button.classList.add('hide');
 
+    // change button from 'show more' to 'show less' only in parent
     showLessButtons.forEach(showLessButton => {
         if(showLessButton.parentNode === button.parentNode) {
             showLessButton.classList.remove('hide');
@@ -185,11 +124,11 @@ function showMore(button) {
 }
 
 function showLess(button) {
-
     var showMoreButtons = document.querySelectorAll('.show-more-button');
 
+    // add hidden class to all the cards in section ( parent ) starting from 3nd one ( 2nd index )
     cards.forEach(card => {
-        if(sameParent(button, card) && card.classList.contains('shown')) {
+        if(card.parentNode.parentNode === button.parentNode && card.classList.contains('shown')) {
             card.classList.remove('shown');
             card.classList.add('hidden');
         }
@@ -197,6 +136,7 @@ function showLess(button) {
 
     button.classList.add('hide');
 
+    // change button from 'show less' to 'show more' only in parent
     showMoreButtons.forEach(showMoreButton => {
         if(showMoreButton.parentNode === button.parentNode) {
             showMoreButton.classList.remove('hide');
@@ -204,13 +144,88 @@ function showLess(button) {
     });
 }
 
-function hideImages(card) {
-    cards.forEach(element => {
-        if(card.parentNode === element.parentNode) {
-            if(element.classList.contains('shown')) {
-                element.classList.remove('shown');
-                element.classList.add('hidden');
+function nextImage() {
+    for(i = 0; i < cards.length; i++) {
+        if(cards[i] === getCurrentImage()) {
+            getCurrentImage().classList.remove('preview');
+
+            if(!imagesState(cards[i])) {
+                // if cards are in hidden state
+                if(cards[i+1].classList.contains('hidden')) {
+                    cards[i+1].classList.remove('hidden');
+                    cards[i+1].classList.add('shown');
+                }
             }
+
+            // if section is about to change
+            if(cards[i+1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
+                // section changed
+                // section id ( title ) --> var text
+                var text = cards[i+1].parentNode.parentNode.id;
+                
+                var title = document.getElementById('section-title-banner');
+
+                var buttonMoveLeft = document.getElementById('button-left');
+                var buttonMoveRight = document.getElementById('button-right');
+
+                buttonMoveLeft.classList.add('hidden');
+                buttonMoveRight.classList.add('hidden');
+
+                title.innerHTML = text;
+                $('#section-title-banner').addClass('active').delay(2000).queue(function() {
+                    $(this).removeClass('active');
+                    $(this).dequeue();
+                });
+            } else {
+                // section hasn's changed
+                var title = document.getElementById('section-title-banner');
+                title.classList.remove('active');
+                title.innerHTML = '';
+            }
+
+            cards[++i].classList.add('preview');
+            break;
         }
-    });
+    }
+    toggleButtons();
+}
+
+function previousImage() {
+    for(i = 0; i < cards.length; i++) {
+        if(cards[i] === getCurrentImage()) {
+            getCurrentImage().classList.remove('preview');
+
+            if(!imagesState(cards[i])) {
+                // if cards are in hidden state
+                if(cards[i-1].classList.contains('hidden')) {
+                    cards[i-1].classList.remove('hidden');
+                    cards[i-1].classList.add('shown');
+                }
+            }
+
+            // if section is about to change
+            if(cards[i-1].parentNode.parentNode.id != cards[i].parentNode.parentNode.id) {
+                // section changed
+                // section id ( title ) --> var text
+                var text = cards[i-1].parentNode.parentNode.id;
+
+                var title = document.getElementById('section-title-banner');
+
+                title.innerHTML = text;
+                $('#section-title-banner').addClass('active').delay(2000).queue(function() {
+                    $(this).removeClass('active');
+                    $(this).dequeue();
+                });
+            } else {
+                // section hasn's changed
+                var title = document.getElementById('section-title-banner');
+                title.classList.remove('active');
+                title.innerHTML = '';
+            }
+
+            cards[--i].classList.add('preview');
+            break;
+        }
+    }
+    toggleButtons();
 }

@@ -48,22 +48,3 @@ function toggleMenu() {
         container.classList.add('active')
     }
 }
-
-// function to close menu on click outside
-// document.addEventListener('click', (event) => {
-//     const flyoutElement = document.querySelector('.menu');
-//     let clickedElement = event.target;
-//     var menuToggle = document.querySelector('.button');
-//     do {
-//         if(clickedElement == menuToggle) {
-//             return;
-//         }
-//         if(clickedElement == flyoutElement) {
-//             return;
-//         } 
-//         clickedElement = clickedElement.parentNode;
-//     } while(clickedElement);
-//     if(flyoutElement.classList.contains('toggled')) {
-//         toggleMenu();
-//     }
-// });
