@@ -1,33 +1,24 @@
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 100vw;
   color: #eee;
   background: #111;
   text-align: left;
 }
-
 @media screen and (max-width: 1210px) {
   footer {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    justify-content: left;
   }
 }
-
 footer .title {
   font-size: 2.2em;
   position: relative;
   margin: 0;
 }
-
 footer .title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -36,7 +27,6 @@ footer .title::after {
   height: 4px;
   background-color: #4B6587;
 }
-
 footer .subscription {
   width: 100vw;
   padding: 80px 0;
@@ -44,62 +34,41 @@ footer .subscription {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 footer .subscription .heading {
   width: 100%;
 }
-
 footer .subscription .heading .title {
   font-size: 2.4em;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
 }
-
 footer .subscription .heading .title::after {
   display: none;
 }
-
 footer .subscription form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   z-index: 1;
   margin-top: 30px;
 }
-
 footer .subscription form .field {
   margin: 0 10px;
   background-color: #171717;
   outline: none;
   padding: 12px 8px;
-  font-size: .8em;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  font-size: 0.8em;
+  transition: 0.3s ease-in-out;
   border-radius: 3px;
   border: 2px solid #171717;
   color: #eee;
 }
-
 @media screen and (max-width: 720px) {
   footer .subscription form .field#email {
     width: 90vw;
@@ -108,42 +77,33 @@ footer .subscription form .field {
     width: 90vw;
   }
 }
-
 footer .subscription form .field#email {
   width: 300px;
 }
-
 @media screen and (max-width: 720px) {
   footer .subscription form .field#email {
     width: 100%;
     margin-bottom: 20px;
   }
 }
-
 footer .subscription form .field#name {
   width: 200px;
 }
-
 @media screen and (max-width: 720px) {
   footer .subscription form .field#name {
     width: 100%;
     margin-bottom: 20px;
   }
 }
-
 footer .subscription form .field:hover {
-  -webkit-filter: opacity(0.8);
-          filter: opacity(0.8);
+  filter: opacity(0.8);
 }
-
 footer .subscription form .field:focus {
   background: #fff;
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+  filter: opacity(1);
   border: 2px solid #be0000;
   color: #111;
 }
-
 footer .subscription form .subscribe-button {
   margin: 0 10px;
   padding-left: 30px;
@@ -155,28 +115,22 @@ footer .subscription form .subscribe-button {
   background-color: #be0000;
   color: #eee;
   cursor: pointer;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-
 @media screen and (max-width: 720px) {
   footer .subscription form .subscribe-button {
     padding: 10px 30px;
   }
 }
-
 footer .subscription form .subscribe-button:hover {
   background: #BD4B4B;
 }
-
 footer .subscription .bannerImg {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-filter: opacity(0.7);
-          filter: opacity(0.7);
+  filter: opacity(0.7);
 }
-
 footer .subscription .bannerImg img {
   width: 100%;
   height: 100%;
@@ -185,26 +139,17 @@ footer .subscription .bannerImg img {
   -o-object-position: center;
      object-position: center;
 }
-
 footer .about {
   max-width: 33%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 45px 30px;
 }
-
 @media screen and (max-width: 1210px) {
   footer .about {
     max-width: 100%;
@@ -212,39 +157,31 @@ footer .about {
     padding-bottom: 0;
   }
 }
-
 footer .about p {
   font-size: 1.2em;
   font-weight: 400;
 }
-
 footer .about p a {
   color: #4B6587;
   text-decoration: none;
   white-space: nowrap;
 }
-
 footer .about p a:hover {
   text-decoration: underline;
   color: #C9CCD5;
 }
-
 footer .about .social-media-icons a {
   font-size: 1.5em;
   text-decoration: none;
   color: #eee;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-
 footer .about .social-media-icons a:first-child {
   margin: 0 20px 0 0;
 }
-
 footer .about .social-media-icons a:hover {
   color: #C9CCD5;
 }
-
 footer .contact {
   padding: 45px 30px;
   position: relative;
@@ -252,18 +189,10 @@ footer .contact {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 @media screen and (max-width: 700px) {
   footer .contact {
     max-width: 100%;
@@ -272,31 +201,22 @@ footer .contact {
     padding-left: 30px;
   }
 }
-
 footer .contact ul {
   list-style-type: none;
   padding: 0;
 }
-
 footer .contact ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 20px 0 0 0;
   font-size: 1.4em;
 }
-
 footer .contact ul li i {
   margin: 0 20px 0 0;
 }
-
 footer .contact ul li p {
   margin: 0;
 }
-
 footer .links {
   padding: 45px 30px;
   position: relative;
@@ -304,70 +224,46 @@ footer .links {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 @media screen and (max-width: 700px) {
   footer .links {
     width: 90vw;
     max-width: 100%;
   }
 }
-
 footer .links ul {
   padding: 0;
 }
-
 footer .links ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 20px;
   position: relative;
 }
-
 footer .links ul li a {
   color: #eee;
   text-decoration: none;
   margin: 20px 0 0 0;
   font-size: 1.4em;
   position: relative;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
-
 footer .links ul li a i {
   position: absolute;
   right: 0;
   opacity: 0;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
-  -webkit-transition-delay: .2s;
-          transition-delay: .2s;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0.2s;
 }
-
 footer .links ul li a:hover {
-  -webkit-transform: translateX(4px);
-          transform: translateX(4px);
+  transform: translateX(4px);
   padding-right: 4px;
   color: #C9CCD5;
 }
-
 footer .links ul li a:hover i {
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
+  transform: translateX(20px);
   opacity: 1;
-}
-/*# sourceMappingURL=footer.css.map */
+}/*# sourceMappingURL=footer.css.map */

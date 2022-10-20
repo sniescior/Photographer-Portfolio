@@ -13,7 +13,9 @@
 </head>
 <body>
     <nav class="menu" id="main-menu">
-        <div class="a-toggle" onclick="toggleMenu();"><i class="icon-cancel"></i></div>
+        <div class="a-toggle" onclick="toggleMenu();">
+            <i class="bi bi-x-lg"></i>
+        </div>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about/about.html">Some info</a></li>
@@ -24,7 +26,9 @@
     </nav>
     <header class="main-header full-width">
         <h2 class="logo"><a href="../index.html">Fancy photographer</a></h2>
-        <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
+        <button class="toggle" id="menu-toggle" onclick="toggleMenu();">
+            <i class="bi bi-list"></i>
+        </button>
     </header>
     <div class="container">
         <div class="contact-box">

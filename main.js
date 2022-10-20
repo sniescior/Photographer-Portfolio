@@ -30,54 +30,40 @@ if ($('.smart-scroll').length > 0) { // check if element exists
 var container = document.querySelector('.container');
 let menu = document.querySelector('.main-header');
 
-// $(window).on('scroll', () => {
-//     if($(window).scrollTop() > 55) {
-//         menu.classList.add('scrolled');
-//     } else {
-//         if(!menu.classList.contains('bg-white')) menu.classList.remove('scrolled');
-//     }
-// });
-
 function toggleMenu() {
-    var menuToggle = document.querySelector('.menu');
-    var container = document.querySelector('.container');
-    var button  = document.querySelector('.button');
-    var nav = document.querySelector('.main-header');
-    var toggle = document.querySelector('.toggle');
-    var aToggle = document.querySelector('.a-toggle');
-
-    aToggle.classList.toggle('visible');
-    container.classList.toggle('active');
-    nav.classList.toggle('active');
-
-    // toggle menu and move the whole container
-    menuToggle.classList.toggle('toggled');
-
-    // change button icon
-    if(button.classList.contains('icon-menu')) {
-        button.classList.remove('icon-menu');
-        button.classList.add('icon-cancel');
+    const buttonToggle = document.querySelector('#menu-toggle')
+    const menuElement = document.querySelector('#main-menu')
+    const aToggle = document.querySelector('.a-toggle')
+    const container = document.querySelector('.container')
+    
+    if(buttonToggle.classList.contains('active')) {
+        menuElement.classList.remove('toggled')
+        buttonToggle.classList.remove('active')
+        aToggle.classList.remove('visible')
+        container.classList.remove('active')
     } else {
-        button.classList.remove('icon-cancel');
-        button.classList.add('icon-menu');
+        menuElement.classList.add('toggled')
+        buttonToggle.classList.add('active')
+        aToggle.classList.add('visible')
+        container.classList.add('active')
     }
 }
 
 // function to close menu on click outside
-document.addEventListener('click', (event) => {
-    const flyoutElement = document.querySelector('.menu');
-    let clickedElement = event.target;
-    var menuToggle = document.querySelector('.button');
-    do {
-        if(clickedElement == menuToggle) {
-            return;
-        }
-        if(clickedElement == flyoutElement) {
-            return;
-        } 
-        clickedElement = clickedElement.parentNode;
-    } while(clickedElement);
-    if(flyoutElement.classList.contains('toggled')) {
-        toggleMenu();
-    }
-});
+// document.addEventListener('click', (event) => {
+//     const flyoutElement = document.querySelector('.menu');
+//     let clickedElement = event.target;
+//     var menuToggle = document.querySelector('.button');
+//     do {
+//         if(clickedElement == menuToggle) {
+//             return;
+//         }
+//         if(clickedElement == flyoutElement) {
+//             return;
+//         } 
+//         clickedElement = clickedElement.parentNode;
+//     } while(clickedElement);
+//     if(flyoutElement.classList.contains('toggled')) {
+//         toggleMenu();
+//     }
+// });

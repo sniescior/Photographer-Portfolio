@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 $background-theme: #fff;
 $menu-theme: #fff;
 $font-color: #111;
@@ -32,6 +34,9 @@ $hover-color: #4B6587;
         cursor: pointer;
         visibility: hidden;
         transition: .5s ease-in-out;
+        background-color: transparent;
+        color: $font-color;
+        border: none;
 
         &.visible {
             transform: translate(-330px, 0);
@@ -88,12 +93,12 @@ $hover-color: #4B6587;
 }
 
 .main-header {
-    z-index: 5;
     position: fixed;
     width: 50vw;
     right: 0;
     display: flex;
     justify-content: space-between;
+    background: $background-theme;
 
     &.scrolled-down {
         transform: translateY(-100%);
@@ -106,17 +111,12 @@ $hover-color: #4B6587;
     &.full-width {
         width: 100vw;
         max-height: 80px;
-        z-index: 1;
+        z-index: 5;
         transition: .4s ease-in-out;
 
         &.active {
             transform: translateX(-300px);
         }
-    }
-
-    &.scrolled {
-        background: $background-theme;
-        z-index: 2;
     }
 
     .logo {
@@ -145,19 +145,36 @@ $hover-color: #4B6587;
         font-size: 1.7em;
         cursor: pointer;
         transition: .4s ease-in-out;
+        background-color: transparent;
+        color: $font-color;
+        border: none;
+
+        i {
+            color: $font-color;
+        }
 
         &.active {
-            transform: translateX(-300px);
-
             @media screen and (max-width: 650px) {
                 transform: translateX(300px);
             }
-
+        }
+    }
+    
+    &.full-width {
+        .toggle {
+            &.active {
+                transform: translateX(-300px);
+                
+                @media screen and (max-width: 650px) {
+                    transform: translateX(300px);
+                }
+            }
         }
     }
 
     @media screen and (max-width: 800px) {
         width: 100vw;
         background: $background-theme;
+        z-index: 2;
     }
 }

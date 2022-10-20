@@ -13,7 +13,9 @@
 </head>
 <body>
     <nav class="menu" id="main-menu">
-        <div class="a-toggle" onclick="toggleMenu();"><i class="icon-cancel"></i></div>
+        <div class="a-toggle" onclick="toggleMenu();">
+            <i class="bi bi-x-lg"></i>
+        </div>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about/about.html">Some info</a></li>
@@ -25,7 +27,9 @@
     <!-- smart-scroll is for hiding navbar on scroll down -->
     <header class="main-header full-width bg-white smart-scroll">
         <h2 class="logo"><a href="../index.html">Fancy photographer</a></h2>
-        <div class="toggle" onclick="toggleMenu();"><i class="icon-menu button"></i></div>
+        <button class="toggle" id="menu-toggle" onclick="toggleMenu();">
+            <i class="bi bi-list"></i>
+        </button>
     </header>
     <div class="container">
 
@@ -164,7 +168,7 @@
         </section>
         <section class="parallax">
             <div class="heading">
-                <h2>Business and marketing photography</h2>
+                <h2>Business photography</h2>
             </div>
         </section>
         <section class="vanilla" id="business">
@@ -218,9 +222,15 @@
                     Get in touch
                 </h2>
                 <ul>
-                    <li><i class="icon-phone"></i><p>023 1456 9912</p></li>
-                    <li><i class="icon-mail"></i><p>fancy-photographer@&#8203;contact.com</p></li>
-                    <li><i class="icon-location"></i><p>123 Street, London</p></li>
+                    <li>
+                        <i class="bi bi-phone"></i>
+                        <p>023 1456 9912</p></li>
+                    <li>
+                        <i class="bi bi-envelope-paper"></i>
+                        <p>fancy-photographer@&#8203;contact.com</p></li>
+                    <li>
+                        <i class="bi bi-house-door"></i>
+                        <p>123 Street, London</p></li>
                 </ul>
             </div>
             <div class="links">
@@ -228,9 +238,24 @@
                     Useful links
                 </h2>
                 <ul>
-                    <li><a href="../offer/offer.html">Offer<i class="icon-right-small"></a></i></li>
-                    <li><a href="../about/about.html">About me<i class="icon-right-small"></a></i></li>
-                    <li><a href="../contact/contact.html">Contact<i class="icon-right-small"></a></i></li>
+                    <li>
+                        <a href="../offer/offer.html">
+                            Offer
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../about/about.html">
+                            About me
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../gallery/gallery.html">
+                            Gallery
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </footer>
